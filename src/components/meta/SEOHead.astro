@@ -1,9 +1,9 @@
 ---
 const {
-  title = 'Learn Portuguese with Sofia',
-  description = 'Engaging Portuguese lessons with Sofia. Learn European Portuguese online with courses, classes, and practice tools.',
-  image = '/images/courses-b1.webp',
-  canonical = 'https://learnportuguesewithsofia.com',
+  title = 'Sergio Camalich Morales',
+  description = 'Chief Maker of Stuff',
+  image = '/images/sergioCamalich.webp',
+  canonical = 'https://camali.ch',
   robots = 'index, follow',
   type = 'website'
 } = Astro.props;
@@ -12,7 +12,7 @@ const siteOrigin =
   (() => {
     try { return new URL(canonical).origin; } catch {}
     try { return Astro.site?.origin } catch {}
-    return 'https://learnportuguesewithsofia.com';
+    return 'https://camali.ch';
   })();
 
 const absoluteImage = (() => {
@@ -22,7 +22,7 @@ const absoluteImage = (() => {
       // Resolve relative/protocol-relative against the site origin
       return new URL(image.replace(/^\/\//, 'https://'), siteOrigin).toString();
   } catch {
-      return `${siteOrigin}/images/courses-b1.webp`;
+      return `${siteOrigin}/images/sergioCamalich.webp`;
   }
 })();
 ---
@@ -36,7 +36,7 @@ const absoluteImage = (() => {
 <!-- Open Graph -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonical} />
-<meta property="og:site_name" content="Learn Portuguese with Sofia" />
+<meta property="og:site_name" content="Sergio Camalich" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={absoluteImage} />

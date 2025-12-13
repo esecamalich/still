@@ -55,10 +55,10 @@ export function generateSEO({
   const robots = indexable ? "index, follow" : "noindex, nofollow";
 
   return {
-    title: title ? `${title} | Learn Portuguese with Sofia` : "Learn Portuguese with Sofia",
+    title: title ? `${title} | Sergio Camalich` : "Sergio Camalich",
     description:
       description ||
-      "Engaging Portuguese lessons with Sofia. Learn European Portuguese online with courses, classes, and practice tools.",
+      "Chief Maker of Stuff",
     canonical,
     image: fullImage,
     robots,

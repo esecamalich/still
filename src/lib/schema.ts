@@ -1,7 +1,7 @@
 export const websiteSchema = (baseUrl: string) => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Learn Portuguese with Sofia",
+  "name": "Sergio Camalich Morales",
   "url": baseUrl,
   "potentialAction": {
     "@type": "SearchAction",
@@ -13,12 +13,12 @@ export const websiteSchema = (baseUrl: string) => ({
 export const orgSchema = (baseUrl: string) => ({
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Learn Portuguese with Sofia",
+  "name": "Sergio Camalich Morales",
   "url": baseUrl,
   "logo": { "@type": "ImageObject", "url": `${baseUrl}/images/favicon.png` },
   "sameAs": [
-    "https://www.youtube.com/@learnportuguesewithsofia",
-    "https://www.instagram.com/learnportuguesewithsofia"
+    "https://www.youtube.com/@camali_ch",
+    "https://www.instagram.com/camali.ch"
   ]
 });
 
@@ -43,7 +43,7 @@ export const courseSchema = (args: {
     "name": args.name,
     "description": args.description,
     "inLanguage": args.inLanguage,
-    "provider": { "@type": "Organization", "name": "Learn Portuguese with Sofia", "sameAs": args.baseUrl }
+    "provider": { "@type": "Organization", "name": "Sergio Camalich Morales", "sameAs": args.baseUrl }
   };
   if (args.instance) {
     s.hasCourseInstance = [{
@@ -60,7 +60,7 @@ export const courseSchema = (args: {
         "priceCurrency": args.instance.currency,
         "availability": `https://schema.org/${args.instance.availability}`,
         ...(args.instance.validFrom ? { "validFrom": args.instance.validFrom } : {}),
-        "seller": { "@type": "Organization", "name": "Learn Portuguese with Sofia" }
+        "seller": { "@type": "Organization", "name": "Sergio Camalich Morales" }
       }
     }];
   }
@@ -76,7 +76,7 @@ export const productSchema = (args: {
   "@type": "Product",
   "name": args.name,
   ...(args.sku ? { "sku": args.sku } : {}),
-  "brand": { "@type": "Organization", "name": "Learn Portuguese with Sofia" },
+  "brand": { "@type": "Organization", "name": "Sergio Camalich Morales" },
   "image": args.image,
   "description": args.description,
   ...(args.rating ? { "aggregateRating": { "@type": "AggregateRating", "ratingValue": String(args.rating.value), "reviewCount": String(args.rating.count) } } : {}),
@@ -130,5 +130,5 @@ export const personSchema = (args: {
   "image": args.imageUrl,
   "url": args.aboutUrl,
   "sameAs": args.sameAs,
-  "affiliation": { "@type": "Organization", "name": "Learn Portuguese with Sofia", "url": args.orgUrl }
+  "affiliation": { "@type": "Organization", "name": "Sergio Camalich Morales", "url": args.orgUrl }
 });
