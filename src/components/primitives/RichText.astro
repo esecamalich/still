@@ -1,10 +1,10 @@
 ---
 import styles from './RichText.module.css';
 import { marked } from 'marked';
-const { markdown = '', class: className = '', document } = Astro.props;
+const { markdown = '', class: className = '', document, ...rest } = Astro.props;
 const html = marked.parse(markdown);
 ---
 
-<div class={`${styles['rich-text']} ${className}`.trim()}>
+<div class={`${styles['rich-text']} ${className}`.trim()} {...rest}>
   <Fragment set:html={html} />
 </div>
