@@ -1,0 +1,36 @@
+/* Base */
+.divider {
+  border: none;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+/* === Style Variants === */
+.divider--solid {
+  border-top-style: solid;
+}
+
+.divider--dashed {
+  border-top-style: dashed;
+}
+
+.divider--thick {
+  border-top-width: 2px;
+}
+
+/* === Color Variants === */
+.divider--default {
+  border-top-color: var(--color-border);
+}
+
+.divider--subtle {
+  border-top-color: var(--color-border-subtle);
+}
+
+.divider--strong {
+  border-top-color: var(--color-border-strong);
+}
+
+.divider--inverted {
+  border-top-color: var(--color-border-inverted);
+}

@@ -1,0 +1,26 @@
+---
+const {
+  id = '',        // section anchor
+  class: className = '',  // extra classes
+  padding = 'global',     // e.g. 'none', 'sm', 'lg', 'global'
+  paddingTop,    // optional, defaults to --space-6xl
+  paddingBottom, // optional, defaults to --space-6xl
+  size = 'xl',            // e.g. 'sm', 'md', 'xl', 'fluid'
+  as = 'section', // HTML element type
+} = Astro.props;
+
+const Tag = as;
+const paddingTopClass = paddingTop ? `section__padding-top--${paddingTop}` : '';
+const paddingBottomClass = paddingBottom ? `section__padding-bottom--${paddingBottom}` : '';
+---
+
+<Tag
+  id={id}
+  class={`section ${paddingTopClass} ${paddingBottomClass} ${className}`.trim()}
+>
+  <div class={`padding-${padding}`}>
+    <div class={`container-${size}`}>
+      <slot />
+    </div>
+  </div>
+</Tag>

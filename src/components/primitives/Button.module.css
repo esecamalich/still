@@ -1,0 +1,32 @@
+/* 
+  The styles in this file are not currently being applied.
+  Check styles/utilties/buttons.css for the correct styles.
+*/
+
+.button {
+  all: unset; /* full reset for both <a> and <button> */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  text-decoration: none;
+
+  color: var(--color-button-text);
+  background-color: var(--color-button-bg);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  white-space: nowrap;
+}
+
+.button:hover {
+  /* box-shadow: var(--shadow-md); */
+}

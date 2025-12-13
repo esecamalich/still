@@ -1,0 +1,125 @@
+.rich-text p {
+  margin-bottom: var(--space-lg);
+  line-height: var(--text-body-md-line);
+}
+
+.rich-text hr {
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
+}
+
+/* === Headings == */
+
+  .rich-text h1,
+  .rich-text h2,
+  .rich-text h3,
+  .rich-text h4,
+  .rich-text h5,
+  .rich-text h6 {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .rich-text h1 {
+    margin-top: var(--space-4xl);
+  }
+
+  .rich-text h2 {
+    margin-top: var(--space-3xl);
+  }
+
+  .rich-text h3 {
+    margin-top: var(--space-2xl);
+  }
+
+  .rich-text h4 {
+    margin-top: var(--space-xl);
+  }
+
+  .rich-text h5 {
+    margin-top: var(--space-lg);
+  }
+
+  .rich-text h6 {
+    margin-top: var(--space-md);
+  }
+
+  /* Remove top margin if heading is the first child */
+  .rich-text > h1:first-child,
+  .rich-text > h2:first-child,
+  .rich-text > h3:first-child,
+  .rich-text > h4:first-child,
+  .rich-text > h5:first-child,
+  .rich-text > h6:first-child {
+    margin-top: var(--space-0);
+  }
+
+/* === Lists === */
+
+  .rich-text ul,
+  .rich-text ol {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  padding-left: var(--space-xl); /* Indent for bullets or numbers */
+  }
+
+  /* Remove top margin if first element in .rich-text */
+  .rich-text > ul:first-child,
+  .rich-text > ol:first-child {
+  margin-top: var(--space-0);
+  }
+
+  /* List item spacing: tight, no vertical margin by default */
+  .rich-text li {
+  margin-top: var(--space-0);
+  margin-bottom: var(--space-0);
+  }
+
+  /* Optional: Add spacing between list items for large/complex lists */
+  .rich-text li + li {
+  margin-top: var(--space-xs);
+  }
+
+  /* Nested list spacing */
+  .rich-text li > ul,
+  .rich-text li > ol {
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  }
+
+/* === Tables === */
+
+  .rich-text table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-3xl);
+    margin-bottom: var(--space-3xl);
+    overflow-x: auto;
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Header and cell padding */
+  .rich-text th,
+  .rich-text td {
+    padding: var(--space-xs) var(--space-sm);
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid var(--color-border-subtle);
+  }
+
+  /* Table header styling */
+  .rich-text th {
+    background-color: var(--color-surface);
+    font-weight: 600;
+  }
+
+  /* Optional: Zebra stripes */
+  .rich-text tr:nth-child(even) {
+    background-color: var(--color-surface-subtle);
+  }
+
+  /* Remove top margin if first element in .rich-text */
+  .rich-text > table:first-child {
+    margin-top: var(--space-0);
+  }

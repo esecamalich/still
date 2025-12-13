@@ -1,0 +1,16 @@
+---
+import styles from './Card.module.css';
+
+const { 
+  class: className = '', 
+  background = 'none', 
+  padding = 'md',
+  border = 'subtle',
+  radius = 'md',
+  shadow = 'md'
+} = Astro.props;
+---
+
+<div class={`${styles['card']} ${styles[`card--${background}`]} ${styles[`card--padding-${padding}`]} ${styles[`card--border-${border}`]} ${styles[`card--radius-${radius}`]} ${styles[`card--shadow-${shadow}`]} ${className}`}>
+    <slot />
+</div>

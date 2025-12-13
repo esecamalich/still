@@ -1,0 +1,74 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/primitives/Section.astro';
+import Text from '@/components/primitives/Text.astro';
+import Stack from '@/components/primitives/Stack.astro';
+import RichText from '@/components/primitives/RichText.astro';
+import Image from '@/components/primitives/Image.astro';
+import Socials from '@/components/custom/Socials.astro';
+
+import { MoveLeft } from '@lucide/astro';
+
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
+
+// Generate new path from every collection entry
+export async function getStaticPaths() {
+    const posts = await getCollection('essays');
+    return posts.map(post => ({
+        params: { id: post.id },
+        props: { post },
+    }));
+}
+
+type Props = {
+    post: CollectionEntry<'essays'>;
+};
+
+const { post } = Astro.props as Props;
+const { Content } = await render(post);
+
+// SEO metadata generation
+import { generateSEO } from '@/utils/generateSEO.ts';
+const seo = generateSEO({
+  title: post.data.title,
+  description: post.data.description,
+  slug: `${post.data.slug ?? post.id}`,
+  image: post.data.image,
+  prefix: '/essays',
+  type: 'article',
+});
+---
+
+<BaseLayout {...seo}>
+    <Section size="md">
+        <Stack gap={{ base: '3xl' }} style="max-width: 75ch;">
+            <Stack 
+                as="a"
+                href={Astro.request.headers.get('referer')?.includes(Astro.site?.origin || '') ? Astro.request.headers.get('referer') : '/'}
+                direction={{ base: 'row' }} 
+                gap={{ base: 'sm' }}
+                style="color: var(--color-neutral-500)">
+                <MoveLeft size={16} />
+                <Text size="body-sm">Back</Text>
+            </Stack>
+            <Text as="h1">
+                {post.data.title}
+            </Text>
+            { post.data.introduction && (
+                <RichText markdown={post.data.introduction} class="text-body-xl color-text-subtle" />
+            )}
+            { post.data.thumbnail && (
+                <Image 
+                    src={post.data.thumbnail}
+                />
+            )}
+            <Stack id="article-content" class="color-text-subtle">
+                <Content />
+            </Stack>
+        </Stack>
+    </Section>
+
+    <Socials />
+
+</BaseLayout>

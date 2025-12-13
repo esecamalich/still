@@ -1,0 +1,52 @@
+---
+const {
+  title = 'Learn Portuguese with Sofia',
+  description = 'Engaging Portuguese lessons with Sofia. Learn European Portuguese online with courses, classes, and practice tools.',
+  image = '/images/courses-b1.webp',
+  canonical = 'https://learnportuguesewithsofia.com',
+  robots = 'index, follow',
+  type = 'website'
+} = Astro.props;
+
+const siteOrigin =
+  (() => {
+    try { return new URL(canonical).origin; } catch {}
+    try { return Astro.site?.origin } catch {}
+    return 'https://learnportuguesewithsofia.com';
+  })();
+
+const absoluteImage = (() => {
+  try {
+      // If already absolute, keep as-is
+      if (/^https?:\/\//i.test(image)) return image;
+      // Resolve relative/protocol-relative against the site origin
+      return new URL(image.replace(/^\/\//, 'https://'), siteOrigin).toString();
+  } catch {
+      return `${siteOrigin}/images/courses-b1.webp`;
+  }
+})();
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="robots" content={robots} />
+<meta name="author" content="Sofia Nobre" />
+<link rel="canonical" href={canonical} />
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content="Learn Portuguese with Sofia" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={absoluteImage} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonical} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={absoluteImage} />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/images/favicon.png" />

@@ -1,16 +1,118 @@
 ---
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import Section from "@/components/primitives/Section.astro";
+import Stack from "@/components/primitives/Stack.astro";
+import Text from "@/components/primitives/Text.astro";
+import Image from "@/components/primitives/Image.astro";
+import Grid from "@/components/primitives/Grid.astro";
+import Link from "@/components/primitives/Link.astro";
+import Socials from "@/components/custom/Socials.astro";
 
+/*
+const articles = [
+	{ title: 'Working in creative bursts', href: '#', excerpt: 'Exploring the power of creativity in short, intense sessions for maximum productivity.' },
+	{ title: 'So they changed the algorithm?', href: '#', excerpt: 'A deep dive into the implications of algorithm changes in our digital landscape.' },
+	{ title: 'On the nature of the internet', href: '#', excerpt: 'Reflecting on the internet’s evolution and its impact on society and communication.' },
+	{ title: 'No system will save you', href: '#', excerpt: 'Discussing the limitations of technology and the importance of human agency.' },
+	{ title: 'All hail our new knowledge overlord!', href: '#', excerpt: 'Examining the rise of AI and its role in shaping our access to information.' },
+	{ title: 'A website is never just a website', href: '#', excerpt: 'Understanding the multifaceted nature of websites beyond mere digital presence.' },
+]
+*/
+
+import { getCollection } from 'astro:content';
+const allArticles = await getCollection('essays')
+
+const { latestArticles = allArticles, limit = 5 } = Astro.props;
+
+const sortedArticles = latestArticles
+	.filter((a) => a.data.draft != true) // Exclude drafts
+	.sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()) // Sort by published date
+	.slice(0, limit ?? Infinity) // Only slices if limit is defined
+
+// SEO configuration
+import { generateSEO } from '@/utils/generateSEO.ts';
+const seo = generateSEO({
+  slug: '/',
+});
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout {...seo}>
+
+	<Section id="bio" size="md">
+		<Stack gap={{ base: '3xl' }}>
+			<Image
+				src="/images/sergioCamalich-profile.webp"
+				alt="Sergio Camalich"
+				width={80}
+				height={80}
+				style="border-radius: 9999px"
+			/>
+			<Stack gap={{ base: 'xs' }}>
+				<Text as="h1" size="heading-h3">
+					Sergio Camalich
+				</Text>
+				<Text as="h2" variant="subtle" size="heading-h4" style="font-weight: 400;">
+					Designer, Developer, Creator
+				</Text>
+			</Stack>
+			<Text>
+				Welcome to my personal website! Here you'll find information about my projects, blog posts, and ways to get in touch.
+				Whether you're interested in web development, technology, or just want to say hi, feel free to explore and connect!
+			</Text>
+		</Stack>
+	</Section>
+
+	<!--
+	<Section 
+		id="featured-images"
+		paddingTop="none"
+		paddingBottom="none"
+		size="xl"
+	>
+		<Grid gap="3xl">
+			<Image />
+			<Image />
+			<Image />
+		</Grid>
+	</Section>
+	-->
+
+	<Section
+		id="latest-essays"
+		size="md"
+	>
+		<Stack
+			gap={{ base: '3xl' }}
+		>
+			<Text
+				as="h3"
+				size="body-xs"
+				class="text-uppercase text-medium"
+				variant="subtle"
+				style="letter-spacing: 2px"
+			>
+				Latest Essays
+			</Text>
+			{ sortedArticles.map((article) => (
+				<Link
+					href={`/essays/${article.data.slug ?? article.id}`}
+				>
+					<Text
+						class="text-medium"
+					>
+						{article.data.title}
+					</Text>
+					<Text
+						class="text-medium"
+						variant="subtle"
+					>
+						{article.data.excerpt}
+					</Text>
+				</Link>
+			))}
+		</Stack>
+	</Section>
+
+	<Socials />
+
+</BaseLayout>

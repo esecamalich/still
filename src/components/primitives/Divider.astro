@@ -1,0 +1,21 @@
+---
+import styles from './Divider.module.css';
+const {
+  as = 'hr',
+  style = 'solid',     // solid | dashed | thick
+  color = 'default',   // default | subtle | strong | inverted
+  class: className = '',
+  ...rest
+} = Astro.props;
+
+const Tag = as;
+
+const classList = [
+  styles.divider,
+  styles[`divider--${style}`],
+  styles[`divider--${color}`],
+  className, // external custom class (assumed global)
+].filter(Boolean).join(' ');
+---
+
+<Tag class={classList} {...rest} />

@@ -1,0 +1,51 @@
+---
+import styles from './Stack.module.css';
+
+const {
+  as = 'div',
+  class: className = '',
+  gap = { base: 'md' },
+  direction = { base: 'column' },
+  align = {},
+  name,
+  ...rest
+} = Astro.props;
+
+const Tag = as;
+
+const BREAKPOINT_SUFFIX = {
+  base: '',    // no suffix
+  tablet: '--tablet',
+  desktop: '--desktop',
+};
+
+function getResponsiveClasses(prefix, responsiveObj) {
+  return Object.entries(responsiveObj).map(([bp, val]) => {
+    const suffix = BREAKPOINT_SUFFIX[bp];
+    const className = suffix === ''
+      ? `${prefix}-${val}`
+      : `${prefix}-${val}${suffix}`;
+    return styles[className];
+  });
+}
+
+const gapClasses = getResponsiveClasses('gap', gap);
+const directionClasses = getResponsiveClasses('direction', direction);
+const alignClasses = getResponsiveClasses('align', align); 
+
+const finalClass = [
+  styles.stack,
+  ...gapClasses,
+  ...directionClasses,
+  ...alignClasses,
+  className,
+].filter(Boolean).join(' ');
+---
+
+<Tag 
+  class={finalClass}
+  {...(name ? { name } : {})}
+  {...rest}
+>
+  <slot />
+</Tag>

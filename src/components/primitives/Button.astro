@@ -1,0 +1,28 @@
+---
+import styles from './Button.module.css';
+
+const { 
+  href, 
+  type = 'button', 
+  class: className = '',
+  variant = 'primary', 
+  label = 'Learn More',
+  ...rest
+} = Astro.props;
+
+// Is it an anchor tag?
+const isExternal = href?.startsWith('http');
+const Tag = href ? 'a' : 'button';
+
+// Dynamic attributes
+const attrs = Tag === 'button'
+  ? { type }
+  : {
+      href,
+      ...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})
+    };
+---
+
+<Tag class={`button button--${variant} ${className}`} {...attrs} {...rest}>
+  {label}
+</Tag>

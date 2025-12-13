@@ -1,0 +1,27 @@
+---
+// src/components/primitives/Icon.astro
+import type { SvgComponent } from 'astro/types';
+
+type Props = {
+  icon: SvgComponent;
+  size?: number;
+  class?: string;
+  ariaLabel?: string;
+};
+
+const {
+  icon: Svg,
+  size = 24,
+  class: className = '',
+  ariaLabel,
+} = Astro.props as Props;
+---
+
+<span
+  class={className}
+  role={ariaLabel ? 'img' : undefined}
+  aria-label={ariaLabel}
+  style={`width:${size}px;height:${size}px;display:inline-flex;`}
+>
+  <Svg width={size} height={size} />
+</span>

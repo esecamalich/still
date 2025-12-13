@@ -1,0 +1,151 @@
+---
+// src/layouts/BaseLayout.astro
+
+import '@mstm/mstm-styles';
+import '@/styles/global.css';
+//import SiteNavBar from "@/components/navigation/SiteNavBar.astro";
+//import Newsletter from "@/components/sections/Newsletter.astro";
+//import Footer from "@/components/sections/Footer.astro";
+
+import SEOHead from "@/components/meta/SEOHead.astro";
+
+import Schema from "@/components/meta/Schema.astro";
+import {
+  websiteSchema, orgSchema, breadcrumbsSchema,
+  courseSchema, productSchema, blogPostingSchema, faqSchema, personSchema
+} from "@/lib/schema";
+
+const { 
+  title, 
+  description, 
+  image, 
+  canonical, 
+  className = '', 
+  newsletter = true,
+  navigation = true,
+  footer = true,
+  robots,
+  type,
+  schemaType,       // 'course' | 'product' | 'blog' | 'faq' | 'about' | undefined
+  schemaData,       // object for the chosen type
+  breadcrumbs,      // [{ name, url }, ...]
+  customSchemas     // advanced override: array of full JSON-LD objects
+} = Astro.props;
+
+// Derive base URL from canonical (falls back to site root)
+const baseUrl = (() => {
+  try { return new URL(canonical).origin; } catch { return "https://camali.ch"; }
+})();
+
+// Always-on site schemas
+const siteSchemas = [
+  websiteSchema(baseUrl),
+  orgSchema(baseUrl),
+  ...(breadcrumbs ? [breadcrumbsSchema(breadcrumbs)] : [])
+];
+
+// Page-specific schemas
+let pageSchemas: any[] = [];
+if (Array.isArray(customSchemas)) {
+  pageSchemas = customSchemas;
+} else if (schemaType && schemaData) {
+  switch (schemaType) {
+    case 'course': pageSchemas.push(courseSchema(schemaData)); break;
+    case 'product': pageSchemas.push(productSchema(schemaData)); break;
+    case 'blog': pageSchemas.push(blogPostingSchema(schemaData)); break;
+    case 'faq': pageSchemas.push(faqSchema(schemaData.qas)); break;
+    case 'about': pageSchemas.push(personSchema(schemaData.person)); break;
+  }
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1QY3LKSM3"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-G1QY3LKSM3');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SEOHead {...{ title, description, image, canonical, robots, type }} />
+
+    <link 
+      rel="preload" 
+      href="/fonts/Inter-VariableFont_opsz,wght.ttf" 
+      as="font" 
+      type="font/ttf" 
+      crossorigin="anonymous" 
+    />
+    <link 
+      rel="preload" 
+      href="/fonts/Inter-Italic-VariableFont_opsz,wght.ttf" 
+      as="font" 
+      type="font/ttf" 
+      crossorigin="anonymous" 
+    />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    <link rel="robots" href="/robots.txt" />
+
+    {/* Site-wide JSON-LD */}
+    {siteSchemas.map((s) => <Schema data={s} />)}
+    {/* Page-specific JSON-LD */}
+    {pageSchemas.map((s) => <Schema data={s} />)}
+  </head>
+  <body class={className} >
+    {/* Navbar slot with default */}
+   <!--
+    <slot name="nav">
+      {navigation && <SiteNavBar />}
+    </slot>
+     -->
+
+    <main>
+      <slot />
+    </main>
+
+    <!--
+    {newsletter && <Newsletter />}
+    {footer && <Footer />}
+    -->
+    
+    <script is:inline>
+      document.addEventListener("click", (ev) => {
+        const target = ev.target;
+        if (!(target instanceof Element)) return;
+
+        const el = target.closest("[data-ga]");
+        if (!el || typeof window.gtag !== "function") return;
+
+        const action   = el.getAttribute("data-ga");           // e.g. "buy"
+        const label    = el.getAttribute("data-ga-label");     // optional
+        const category = el.getAttribute("data-ga-category");  // optional
+
+        window.gtag("event", action, {
+          event_category: category || "ga",
+          event_label: label || el.textContent?.trim(),
+        });
+      });
+
+      // Optional: propagate UTMs to marked links
+      const qs = window.location.search.slice(1);
+      if (qs) {
+        document.querySelectorAll("a[data-append-utms]").forEach((a) => {
+          try {
+            const url = new URL(a.href);
+            const incoming = new URLSearchParams(qs);
+            incoming.forEach((v, k) => { 
+              if (!url.searchParams.has(k)) url.searchParams.set(k, v); 
+            });
+            a.href = url.toString();
+          } catch {}
+        });
+      }
+    </script>
+  </body>
+</html>

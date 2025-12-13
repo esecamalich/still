@@ -1,0 +1,118 @@
+---
+// Image.astro
+
+// Props
+const {
+  src = "",
+  alt = "",
+  class: className = "",
+  style = "",
+  width,                // e.g. 120
+  height,               // optional but recommended for CLS
+  loading = "lazy",
+  // If caller doesn't pass `sizes`, we infer it from `width` (when provided)
+  sizes: sizesProp,
+  // Optional: override default widths for local images
+  widths: widthsProp,
+  ...rest
+} = Astro.props;
+
+// Tunables
+const WIDTHS = Array.isArray(widthsProp) && widthsProp.length
+  ? widthsProp
+  : [320, 640, 1024];
+const FORMAT = "webp"; // generate local candidates with .webp
+
+// Lightweight placeholder
+const fallback =
+  "data:image/svg+xml;base64," +
+  btoa(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" style="background:#f3f4f6">
+      <rect width="100%" height="100%" fill="#f3f4f6"/>
+      <text x="50%" y="50%" font-size="20" fill="#9ca3af" text-anchor="middle" alignment-baseline="middle">
+        Image not available
+      </text>
+    </svg>
+  `);
+
+// Normalize protocol-relative
+function normalizeSrc(u = "") {
+  if (!u) return "";
+  return u.startsWith("//") ? `https:${u}` : u;
+}
+
+// Compute sizes: if width provided, lock sizes to that physical slot (prevents overserving)
+const sizes =
+  sizesProp ??
+  ((typeof width === "number" || (typeof width === "string" && width))
+    ? `${width}px`
+    : "(max-width: 1200px) 100vw, 386px");
+
+let srcset = "";
+let resolvedSrc = "";
+const normalized = normalizeSrc(src);
+
+const isRemote = /^https?:\/\//i.test(normalized);
+const isContentful = isRemote && /images\.ctfassets\.net/i.test(normalized);
+
+if (!normalized) {
+  resolvedSrc = fallback;
+} else if (isRemote) {
+  // ✅ Remote images
+  if (isContentful) {
+    // Contentful: use their params to generate responsive candidates
+    const base = normalized.split("?")[0];
+    const make = (w: number) => `${base}?fm=${FORMAT}&w=${w}&q=75`;
+    srcset = WIDTHS.map((w) => `${make(w)} ${w}w`).join(", ");
+    resolvedSrc = make(WIDTHS[WIDTHS.length - 1]);
+  } else {
+    // Generic remote (R2, CDN, etc.) — keep it simple
+    resolvedSrc = normalized;
+    srcset = "";
+  }
+} else {
+  // ✅ Local file (Astro assets)
+  const parts = normalized.split("/");
+  const filename = parts[parts.length - 1] || "";
+
+  // icon-student-1024.webp -> rawBaseName = icon-student-1024, ext = webp|jpg|png|jpeg
+  const match = filename.match(/^(.+?)\.(webp|jpg|jpeg|png)$/i);
+
+  if (match) {
+    const rawBaseName = match[1];
+
+    // Strip any trailing -<digits> (e.g. -320, -640, -1024)
+    const baseName = rawBaseName.replace(/-\d+$/, "");
+
+    const basePath = parts.slice(0, -1).join("/");
+    // Build a .webp srcset: baseName-320.webp, baseName-640.webp, ...
+    srcset = WIDTHS.map(
+      (w) => `${basePath}/${baseName}-${w}.webp ${w}w`,
+    ).join(", ");
+
+    // Use the largest candidate as the `src`
+    resolvedSrc = `${basePath}/${baseName}.webp`;
+  } else {
+    // Non-matching filename (svg, etc.) — just use it as-is
+    resolvedSrc = normalized;
+  }
+}
+
+// Only use fallback on error for *local* images
+const shouldUseFallbackOnError = !isRemote;
+---
+
+<img
+  src={resolvedSrc}
+  alt={alt}
+  width={width}
+  height={height}
+  class={className}
+  style={style}
+  loading={loading}
+  sizes={sizes}
+  srcset={srcset || undefined}
+  decoding="async"
+  onerror={shouldUseFallbackOnError ? `this.onerror=null;this.src='${fallback}';` : undefined}
+  {...rest}
+/>

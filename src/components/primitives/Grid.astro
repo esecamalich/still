@@ -1,0 +1,49 @@
+---
+import styles from './Grid.module.css';
+
+const {
+  as = 'div',
+  id = '',        // section anchor
+  class: className = '',
+  min = '18rem',
+  gap = '6xl',
+  columns,
+} = Astro.props;
+
+const Tag = as;
+
+const resolveSpace = (token) =>
+  token?.startsWith('var(') || token?.includes('clamp') ? token : `var(--space-${token})`;
+
+const inlineStyles = {
+  '--min-col-width': min,
+  '--grid-gap': resolveSpace(gap),
+  '--grid-columns': columns ?? 'auto-fit',
+};
+
+/* 
+
+// Example Usage: Fixed Columns // 
+
+<Grid as="section" columns={3} gap="var(--space-xl)">
+  (...content goes here)
+</Grid>
+
+---
+
+// Example Usage: Fluid Auto Grid (No columns) // 
+
+<Grid min="20rem" gap="clamp(1rem, 3vw, 2rem)">
+  (...content goes here)
+</Grid>
+
+*/
+---
+
+<Tag
+  id={id}
+  class={`${styles.grid} ${className}`.trim()}
+  style={inlineStyles}
+>
+  <slot />
+</Tag>

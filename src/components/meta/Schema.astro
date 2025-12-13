@@ -1,0 +1,18 @@
+---
+interface Props {
+    data: any | any[]; // single object or array of objects
+}
+
+const { data } = Astro.props;
+
+// Normalize to @graph so you can pass multiple objects at once
+const payload =
+    Array.isArray(data)
+        ? { '@context': 'https://schema.org', '@graph': data.map(({ ['@context']: _c, ...o }) => o) }
+        : (data?.['@graph']
+            ? data // already a @graph
+            : { '@context': 'https://schema.org', ...data });
+
+const json = JSON.stringify(data, null, 2);
+---
+<script type="application/ld+json" set:html={json}></script>

@@ -1,0 +1,20 @@
+---
+// Text.astro
+const {
+  as = 'p',
+  variant = '', // default: no variant
+  size,
+  align,
+  class: className = '',
+  ...rest
+} = Astro.props;
+
+const Tag = as;
+const variantClass = variant ? `text-${variant}` : '';
+const alignClass = align ? `text-align-${align}` : '';
+const sizeClass = size ? `text-${size}` : '';
+---
+
+<Tag class={`${variantClass} ${alignClass} ${sizeClass} ${className}`.trim()} {...rest}>
+  <slot />
+</Tag>
