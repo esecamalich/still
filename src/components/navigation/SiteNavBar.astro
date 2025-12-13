@@ -1,0 +1,20 @@
+---
+// src/components/navigation/SiteNavBar.astro
+import NavBar from '@/components/sections/NavBar.astro';
+import { getCollection } from 'astro:content';
+
+const normalize = (p: string) => p.replace(/\/+$/, '') || '/';
+const currentPath = normalize(Astro.url.pathname);
+
+function isActive(href: string) {
+  const base = normalize(href);
+  if (base === '/') return currentPath === '/';
+  return currentPath === base || currentPath.startsWith(base + '/');
+}
+
+const links = [
+  { href: '/essays', label: 'Essays', active: isActive('/essays') },
+];
+---
+
+<NavBar links={links} />

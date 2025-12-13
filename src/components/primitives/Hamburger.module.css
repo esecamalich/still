@@ -1,0 +1,25 @@
+.hamburger-wrapper {
+  padding-right: 20px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2xs);
+}
+
+.hamburger-wrapper .line {
+  display: block;
+  width: var(--size-xl);
+  height: var(--size-3xs);
+  background-color: var(--color-brand-accent);
+}
+
+@media screen and (min-width: 768px) {
+    
+    .hamburger-wrapper {
+        display: none;
+    }
+
+}

@@ -1,0 +1,78 @@
+---
+// src/components/navigation/NavBar.astro
+import styles from './NavBar.module.css';
+import Section from '@/components/primitives/Section.astro';
+import Stack from '@/components/primitives/Stack.astro';
+import Link from '@/components/primitives/Link.astro';
+import Hamburger from '@/components/primitives/Hamburger.astro';
+
+interface NavLink {
+  href: string;
+  label: string;
+  active?: boolean;
+}
+
+interface Props {
+  links: NavLink[];
+  brandHref?: string;
+  brandLabel?: string;
+}
+
+const {
+  links = [],
+  brandHref = '/',
+  brandLabel = 'Sergio Camalich',
+} = Astro.props as Props;
+---
+
+<Section as="nav" class={styles.navbar}>
+  <div class={styles.navbar__layout}>
+    <Link href={brandHref} class={styles.navbar__brand}>
+      <strong class={styles.navbar__title}>{brandLabel}</strong>
+    </Link>
+
+    <Hamburger />
+
+    <div class="menu-wrapper hidden">
+      <Stack
+        direction={{ base: 'column', tablet: 'row' }}
+        gap={{ base: 'xl' }}
+        class={styles.navbar__menu}
+      >
+        {links.map(({ href, label, active }) => (
+          <Link
+            href={href}
+            class={`${styles['navbar__menu-link']} ${active ? styles['current'] : ''}`}
+            {...(active ? { 'aria-current': 'page' } : {})}
+          >
+            {label}
+          </Link>
+        ))}
+
+        {/* Optional right-side content (Clerk stuff, etc.) */}
+        <slot name="right" />
+      </Stack>
+    </div>
+  </div>
+</Section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const burger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu-wrapper');
+
+    function toggleMenu() {
+      menu?.classList.toggle("hidden");
+    }
+
+    function closeMenu() {
+      menu?.classList.add("hidden");
+    }
+
+    burger?.addEventListener("click", toggleMenu);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  });
+</script>

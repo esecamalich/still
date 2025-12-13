@@ -3,8 +3,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro"
 import Section from "@/components/primitives/Section.astro";
 import Stack from "@/components/primitives/Stack.astro";
 import Text from "@/components/primitives/Text.astro";
+import RichText from "@/components/primitives/RichText.astro";
 import Image from "@/components/primitives/Image.astro";
-import Grid from "@/components/primitives/Grid.astro";
 import Link from "@/components/primitives/Link.astro";
 import Socials from "@/components/custom/Socials.astro";
 
@@ -36,7 +36,7 @@ const seo = generateSEO({
 });
 ---
 
-<BaseLayout {...seo}>
+<BaseLayout navigation={false} {...seo}>
 
 	<Section id="bio" size="md">
 		<Stack gap={{ base: '3xl' }}>
@@ -52,13 +52,19 @@ const seo = generateSEO({
 					Sergio Camalich
 				</Text>
 				<Text as="h2" variant="subtle" size="heading-h4" style="font-weight: 400;">
-					Designer, Developer, Creator
+					Chief Maker of Stuff
 				</Text>
 			</Stack>
-			<Text>
-				Welcome to my personal website! Here you'll find information about my projects, blog posts, and ways to get in touch.
-				Whether you're interested in web development, technology, or just want to say hi, feel free to explore and connect!
-			</Text>
+			<RichText 
+				markdown={`
+In a world attempting to reduce the totality of being into a few neat categories, 
+I use the word "stuff" deliberately –– as a refusal to collapse my work 
+into a single role, medium, or outcome.
+
+Over time, I’ve learned that process matters more than performance, 
+presence more than speed, and that different practices all point the same way.
+				`}
+			/>
 		</Stack>
 	</Section>
 
@@ -80,6 +86,7 @@ const seo = generateSEO({
 	<Section
 		id="latest-essays"
 		size="md"
+		paddingTop="none"
 	>
 		<Stack
 			gap={{ base: '3xl' }}
