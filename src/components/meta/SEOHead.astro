@@ -2,7 +2,7 @@
 const {
   title = 'Sergio Camalich Morales',
   description = 'Chief Maker of Stuff',
-  image = '/images/sergioCamalich.jpg',
+  image = '/images/sergioCamalich.webp',
   canonical = 'https://camali.ch',
   robots = 'index, follow',
   type = 'website'
@@ -22,7 +22,7 @@ const absoluteImage = (() => {
       // Resolve relative/protocol-relative against the site origin
       return new URL(image.replace(/^\/\//, 'https://'), siteOrigin).toString();
   } catch {
-      return `${siteOrigin}/images/sergioCamalich.jpg`;
+      return `${siteOrigin}/images/sergioCamalich.webp`;
   }
 })();
 ---

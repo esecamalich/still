@@ -39,7 +39,7 @@ export function generateSEO({
 
   // Image normalization → absolute URL
   const PROTO_REL = /^\/\//;
-  const defaultLocal = "/images/courses-b1.webp";
+  const defaultLocal = "/images/sergioCamalich.webp";
   const normalizeImage = (img?: string) => {
     if (!img) return new URL(defaultLocal, siteOrigin).toString();
     if (ABS.test(img)) return img;
