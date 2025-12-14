@@ -92,6 +92,21 @@ if (Array.isArray(customSchemas)) {
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
     <link rel="robots" href="/robots.txt" />
 
+    <script is:inline>
+      const w = window;
+
+      if (!w.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const root = document.documentElement;
+        root.dataset.pageTransition = "pending";
+        root.dataset.pageTransitionTimer = String(
+          w.setTimeout(() => {
+            root.removeAttribute("data-page-transition");
+            delete root.dataset.pageTransitionTimer;
+          }, 1200)
+        );
+      }
+    </script>
+
     {/* Site-wide JSON-LD */}
     {siteSchemas.map((s) => <Schema data={s} />)}
     {/* Page-specific JSON-LD */}
@@ -146,5 +161,54 @@ if (Array.isArray(customSchemas)) {
         });
       }
     </script>
+    
+    <script>
+		import { gsap } from "gsap";
+
+		const clearPageTransitionFlag = () => {
+			const root = document.documentElement;
+			root.removeAttribute("data-page-transition");
+
+			const timerId = root.dataset.pageTransitionTimer;
+			if (timerId) {
+				window.clearTimeout(Number(timerId));
+				delete root.dataset.pageTransitionTimer;
+			}
+		};
+
+		const animatePage = () => {
+			if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+				clearPageTransitionFlag();
+				return;
+			}
+
+			const targets = Array.from(
+				document.querySelectorAll("body *:not(script):not(style)")
+			);
+
+			if (!targets.length) {
+				clearPageTransitionFlag();
+				return;
+			}
+
+			clearPageTransitionFlag();
+
+			gsap.set(targets, { autoAlpha: 0, y: 16 });
+			gsap.to(targets, {
+				autoAlpha: 1,
+				y: 0,
+				duration: 0.65,
+				stagger: 0.05,
+				ease: "power2.out",
+			});
+		};
+
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", animatePage, { once: true });
+		} else {
+			animatePage();
+		}
+	</script>
+  
   </body>
 </html>

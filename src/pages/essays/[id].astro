@@ -47,6 +47,7 @@ const seo = generateSEO({
         <Stack gap={{ base: '3xl' }} style="max-width: 75ch;" align={{ base: 'start' }}>
             <TranslatedProfile />
             <Stack
+                id="back-button"
                 as="a"
                 href={Astro.request.headers.get('referer')?.includes(Astro.site?.origin || '') ? Astro.request.headers.get('referer') : '/'}
                 direction={{ base: 'row' }}

@@ -1,3 +1,13 @@
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-page-transition="pending"] body {
+    opacity: 0;
+  }
+}
+
 .last-p-marginless p:last-child {
     margin-bottom: 0;
 }
