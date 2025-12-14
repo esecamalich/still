@@ -1,0 +1,9 @@
+.profile__image {
+    border-radius: 9999px;
+}
+
+@media screen and (min-width: 1080px) {
+    .profile {
+        position: absolute; transform: translate(calc(-100% + -40px), -4px);
+    }
+}

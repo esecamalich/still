@@ -1,0 +1,18 @@
+---
+import styles from './TranslatedProfile.module.css';
+import Image from "@/components/primitives/Image.astro"
+import Link from '@/components/primitives/Link.astro';
+---
+
+<Link
+    href="/"
+    class={styles.profile}
+>
+    <Image
+        src="/images/sergioCamalich-profile.webp"
+        alt="Sergio Camalich"
+        width={64}
+        height={64}
+        class={styles.profile__image}
+    />
+</Link>

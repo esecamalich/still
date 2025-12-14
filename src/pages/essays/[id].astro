@@ -4,8 +4,10 @@ import Section from '@/components/primitives/Section.astro';
 import Text from '@/components/primitives/Text.astro';
 import Stack from '@/components/primitives/Stack.astro';
 import RichText from '@/components/primitives/RichText.astro';
+import Link from '@/components/primitives/Link.astro';
 import Image from '@/components/primitives/Image.astro';
 import Socials from '@/components/custom/Socials.astro';
+import TranslatedProfile from '@/components/custom/TranslatedProfile.astro';
 
 import { MoveLeft } from '@lucide/astro';
 
@@ -42,13 +44,16 @@ const seo = generateSEO({
 
 <BaseLayout navigation={false} {...seo}>
     <Section size="md">
-        <Stack gap={{ base: '3xl' }} style="max-width: 75ch;">
-            <Stack 
+        <Stack gap={{ base: '3xl' }} style="max-width: 75ch;" align={{ base: 'start' }}>
+            <TranslatedProfile />
+            <Stack
                 as="a"
                 href={Astro.request.headers.get('referer')?.includes(Astro.site?.origin || '') ? Astro.request.headers.get('referer') : '/'}
-                direction={{ base: 'row' }} 
+                direction={{ base: 'row' }}
                 gap={{ base: 'sm' }}
-                style="color: var(--color-neutral-500)">
+                style="color: var(--color-neutral-500); margin-block: 18px;"
+                align={{ base: 'left' }}
+            >
                 <MoveLeft size={16} />
                 <Text size="body-sm">Back</Text>
             </Stack>
@@ -61,6 +66,7 @@ const seo = generateSEO({
             { post.data.thumbnail && (
                 <Image 
                     src={post.data.thumbnail}
+                    style="width: var(--size-container-full)"
                 />
             )}
             <Stack id="article-content" class="color-text-subtle">
