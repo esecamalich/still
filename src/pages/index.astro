@@ -2,6 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import Section from "@/components/primitives/Section.astro";
 import Stack from "@/components/primitives/Stack.astro";
+import Grid from "@/components/primitives/Grid.astro";
 import Text from "@/components/primitives/Text.astro";
 import RichText from "@/components/primitives/RichText.astro";
 import Image from "@/components/primitives/Image.astro";
@@ -51,7 +52,7 @@ const seo = generateSEO({
 				</Text>
 			</Stack>
 			<RichText 
-				class="text-subtle"
+				class="text-subtle last-p-marginless"
 				markdown={`
 In a world attempting to reduce a person into a few neat categories, 
 I use the word "stuff" deliberately, as a refusal to collapse my work 
@@ -59,13 +60,14 @@ into a single role, medium, or outcome.
 
 Over time I’ve learned that process matters more than performance, presence more than speed, 
 and that different practices –– from [Design & Development](https://makestuffthatmatters.com/) 
-to [Photography](https://www.instagram.com/camali.ch/) –– all point the same way.
+to [Photography](https://strangevisitations.com/) –– all point the same way.
+
+Afterall, wherever my attention goes, *stuff gets done*.
 				`}
 			/>
 		</Stack>
 	</Section>
 
-	<!--
 	<Section 
 		id="featured-images"
 		paddingTop="none"
@@ -73,17 +75,24 @@ to [Photography](https://www.instagram.com/camali.ch/) –– all point the same
 		size="xl"
 	>
 		<Grid gap="3xl">
-			<Image />
-			<Image />
-			<Image />
+			<Image 
+				src="/images/thumbnail-strangeVisitations.webp"
+				style="border-radius: var(--radius-lg);"
+			/>
+			<Image 
+				src="/images/thumbnail-strangeVisitations02.webp"
+				style="border-radius: var(--radius-lg);"
+			/>
+			<Image 
+				src="/images/thumbnail-strangeVisitations03.webp"
+				style="border-radius: var(--radius-lg);"
+			/>
 		</Grid>
 	</Section>
-	-->
 
 	<Section
 		id="latest-essays"
 		size="sm"
-		paddingTop="none"
 	>
 		<Stack
 			gap={{ base: '3xl' }}
