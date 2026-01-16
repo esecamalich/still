@@ -2,7 +2,7 @@
 title: "Visitaciones Extrañas"
 slug: "visitaciones-extranas"
 draft: True
-publishedDate: 2026
+publishedDate: 2026-01-15
 introduction: |
 excerpt: "En el imaginario colectivo, Bali es representado por medio de la sagrada trifecta –– la palmera, el volcán y los campos de arroz –– establecida durante la época colonial."
 thumbnail: "/images/65e0588c2ae1a819bb11f925_%203%20new%20guidelines.jpg"
