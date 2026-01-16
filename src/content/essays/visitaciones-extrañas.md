@@ -1,3 +1,17 @@
+---
+title: "Visitaciones Extrañas"
+slug: "visitaciones-extranas"
+draft: True
+publishedDate: 2026
+introduction: |
+excerpt: "En el imaginario colectivo, Bali es representado por medio de la sagrada trifecta –– la palmera, el volcán y los campos de arroz –– establecida durante la época colonial."
+thumbnail: "/images/65e0588c2ae1a819bb11f925_%203%20new%20guidelines.jpg"
+thumbnailCaption: "Example Caption"
+categories: ['Photography']
+highlight: False
+---
+
+
 En el imaginario colectivo, Bali es representado por medio de la sagrada trifecta –– la palmera, el volcán y los campos de arroz –– establecida durante la época colonial. A su vez, la identidad Balinesa se encuentra en eterno conflicto –– causado una vez más por influencias externas –– debido a su imposibilidad de distinguir entre religión, tradición y cultura.
 
 Cada una de estas definiciones, desde la estética hasta la moral, han sido introducidas por entidades ajenas a los balineses e internalizadas por si mismos. Y si bien estos no siempre han sido mal intencionados, no hace falta mucho esfuerzo para ver que algo extraño está sucediendo en este lugar.
