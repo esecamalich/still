@@ -227,6 +227,26 @@ if (Array.isArray(customSchemas)) {
           active = null;
           flyout.removeAttribute("data-visible");
         });
+
+        const preload = () => {
+          const sources = new Set(
+            Array.from(document.querySelectorAll("[data-essay-preview]"))
+              .map((node) => node.getAttribute("data-thumbnail"))
+              .filter(Boolean),
+          );
+          sources.forEach((src) => {
+            const img = new Image();
+            img.decoding = "async";
+            img.loading = "eager";
+            img.src = src;
+          });
+        };
+
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(preload, { timeout: 1500 });
+        } else {
+          window.setTimeout(preload, 350);
+        }
       })();
     </script>
     
