@@ -50,7 +50,7 @@ const seo = generateSEO({
   title: post.data.title,
   description: post.data.description,
   slug: `${post.data.slug ?? post.id}`,
-  image: post.data.image,
+  image: post.data.thumbnail,
   prefix: '/essays',
   type: 'article',
 });
