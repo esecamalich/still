@@ -123,6 +123,15 @@ if (Array.isArray(customSchemas)) {
       <slot />
     </main>
 
+    <div
+      class="essay-preview-flyout"
+      data-essay-preview-flyout
+      data-no-page-transition
+      aria-hidden="true"
+    >
+      <img class="essay-preview-flyout__image" alt="" />
+    </div>
+
     <!--
     {newsletter && <Newsletter />}
     {footer && <Footer />}
@@ -161,6 +170,65 @@ if (Array.isArray(customSchemas)) {
         });
       }
     </script>
+
+    <script is:inline>
+      (() => {
+        if (window.__essayPreviewInit) return;
+        window.__essayPreviewInit = true;
+
+        const supportsHover = window.matchMedia(
+          "(hover: hover) and (pointer: fine)",
+        ).matches;
+        if (!supportsHover) return;
+
+        const flyout = document.querySelector("[data-essay-preview-flyout]");
+        const img = flyout?.querySelector("img");
+        if (!flyout || !img) return;
+
+        let active = null;
+        const offset = 16;
+
+        const move = (event) => {
+          flyout.style.setProperty("--thumb-x", `${event.clientX + offset}px`);
+          flyout.style.setProperty("--thumb-y", `${event.clientY + offset}px`);
+        };
+
+        document.addEventListener("pointerover", (event) => {
+          const target =
+            event.target instanceof Element
+              ? event.target.closest("[data-essay-preview]")
+              : null;
+          if (!target) return;
+
+          const src = target.getAttribute("data-thumbnail");
+          if (!src) return;
+
+          active = target;
+          img.src = src;
+          flyout.setAttribute("data-visible", "true");
+          move(event);
+        });
+
+        document.addEventListener("pointermove", (event) => {
+          if (!active) return;
+          move(event);
+        });
+
+        document.addEventListener("pointerout", (event) => {
+          if (!active) return;
+          if (!(event.target instanceof Element)) return;
+          if (!active.contains(event.target)) return;
+          if (
+            event.relatedTarget instanceof Node &&
+            active.contains(event.relatedTarget)
+          ) {
+            return;
+          }
+          active = null;
+          flyout.removeAttribute("data-visible");
+        });
+      })();
+    </script>
     
     <script>
 		import { gsap } from "gsap";
@@ -183,7 +251,9 @@ if (Array.isArray(customSchemas)) {
 			}
 
 			const targets = Array.from(
-				document.querySelectorAll("body *:not(script):not(style)")
+				document.querySelectorAll(
+					"body *:not(script):not(style):not([data-no-page-transition])",
+				)
 			);
 
 			if (!targets.length) {

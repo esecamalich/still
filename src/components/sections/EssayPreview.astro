@@ -1,0 +1,37 @@
+---
+import Link from "@/components/primitives/Link.astro";
+import Text from "@/components/primitives/Text.astro";
+import Image from "@/components/primitives/Image.astro";
+import styles from "./EssayPreview.module.css";
+
+const {
+  href,
+  title,
+  excerpt,
+  thumbnail,
+  class: className = "",
+} = Astro.props;
+
+const hasThumbnail = Boolean(thumbnail);
+---
+
+<Link
+  href={href}
+  class={`${styles.preview} ${className}`.trim()}
+  data-essay-preview={hasThumbnail ? "true" : undefined}
+  data-thumbnail={hasThumbnail ? thumbnail : undefined}
+>
+  <span class={styles.content}>
+    <Text class="text-medium">{title}</Text>
+    {excerpt && (
+      <Text class="text-medium" variant="subtle">
+        {excerpt}
+      </Text>
+    )}
+  </span>
+  {hasThumbnail && (
+    <span class={styles.thumb} aria-hidden="true">
+      <Image src={thumbnail} alt="" class={styles.thumbImage} />
+    </span>
+  )}
+</Link>

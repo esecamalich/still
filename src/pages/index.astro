@@ -6,10 +6,10 @@ import Grid from "@/components/primitives/Grid.astro";
 import Text from "@/components/primitives/Text.astro";
 import RichText from "@/components/primitives/RichText.astro";
 import Image from "@/components/primitives/Image.astro";
-import Link from "@/components/primitives/Link.astro";
 import Socials from "@/components/custom/Socials.astro";
 import TranslatedProfile from "@/components/custom/TranslatedProfile.astro";
 import Divider from "@/components/primitives/Divider.astro";
+import EssayPreview from "@/components/sections/EssayPreview.astro";
 
 /*
 const articles = [
@@ -116,21 +116,12 @@ Afterall, wherever my attention goes, *stuff gets done*.
 				Latest Essays
 			</Text>
 			{ sortedArticles.map((article) => (
-				<Link
+				<EssayPreview
 					href={`/essays/${article.data.slug ?? article.id}`}
-				>
-					<Text
-						class="text-medium"
-					>
-						{article.data.title}
-					</Text>
-					<Text
-						class="text-medium"
-						variant="subtle"
-					>
-						{article.data.excerpt}
-					</Text>
-				</Link>
+					title={article.data.title}
+					excerpt={article.data.excerpt}
+					thumbnail={article.data.thumbnail}
+				/>
 			))}
 		</Stack>
 	</Section>

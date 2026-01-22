@@ -11,3 +11,30 @@
 .last-p-marginless p:last-child {
     margin-bottom: 0;
 }
+
+.essay-preview-flyout {
+  position: fixed;
+  left: var(--thumb-x, 50%);
+  top: var(--thumb-y, 50%);
+  width: clamp(180px, 26vw, 320px);
+  opacity: 0;
+  transform: translate3d(0, 12px, 0) scale(0.98);
+  transition: opacity 160ms ease, transform 160ms ease;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.essay-preview-flyout[data-visible="true"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.essay-preview-flyout__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg);
+}
