@@ -57,6 +57,26 @@ const seo = generateSEO({
 ---
 
 <BaseLayout navigation={false} {...seo}>
+
+    <style>
+
+        #article-content :global(img) {
+            max-height: 480px;
+            margin-inline: auto;
+            margin-block: var(--size-md);
+        }
+        
+        @media (min-width:768px) {
+            #article-content :global(img) {
+                max-height: 640px;
+            }
+        }
+
+        #article-content :global(hr) {
+            margin-block: var(--size-3xl);
+        }
+    </style>
+
     <Section size="sm">
         <Stack gap={{ base: '3xl' }} style="max-width: 75ch;" align={{ base: 'start' }}>
             <TranslatedProfile />

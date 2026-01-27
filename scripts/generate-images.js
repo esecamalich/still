@@ -18,7 +18,7 @@ async function generateResponsiveImages() {
     // Skip unsupported or already processed files
     if (
       !SUPPORTED_INPUT_EXTENSIONS.includes(ext) ||
-      /\-\d+\.(webp|jpg|jpeg|png)$/i.test(file)
+      /-(320|640|1024)\.(webp|jpg|jpeg|png)$/i.test(file)
     ) {
       continue;
     }

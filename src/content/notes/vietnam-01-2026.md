@@ -4,7 +4,7 @@ I began the day by looking out of Greg's balcony. Hangover from the previous nig
 
 On my way out of the apartment, a colorful pile of *stuff* greeted me. Of course I had to take a photo of it.
 
-Once out in the street, **I was back.**
+Once out in the street, **I was back in familiar territory.**
 
 ---
 
