@@ -65,6 +65,25 @@ const seo = generateSEO({
             margin-inline: auto;
             margin-block: var(--size-md);
         }
+
+        #article-content :global(h2) {
+            margin-top: var(--size-3xl);
+        }
+
+        #article-content :global(p:has(img):has(em)) {
+            text-align: center;
+            font-size: var(--text-body-xs-size);
+            max-width: 100%;
+            margin-bottom: var(--size-md);
+        }
+
+        #article-content :global(p:has(img):has(em) img) {
+            margin-bottom: 8px;
+        }
+
+        #article-content :global(p:has(img):has(em) ~ hr) {
+            margin-top: var(--size-md);
+        }
         
         @media (min-width:768px) {
             #article-content :global(img) {
@@ -99,10 +118,19 @@ const seo = generateSEO({
                 <RichText markdown={post.data.introduction} class="text-body-xl color-text-subtle" />
             )}
             { post.data.thumbnail && (
-                <Image 
-                    src={post.data.thumbnail}
-                    style="width: var(--size-container-full)"
-                />
+                <>
+                    <figure style="width: 100%">
+                        <Image
+                            src={post.data.thumbnail}
+                            style="width: var(--size-container-full)"
+                        />
+                        { post.data.thumbnailCaption && (
+                            <Text as="figcaption" size="body-xs" class="color-text-subtle" style="text-align: center; margin-top: var(--size-sm);">
+                                {post.data.thumbnailCaption}
+                            </Text>
+                        )}
+                    </figure>
+                </>
             )}
             <Stack id="article-content" class="color-text-subtle">
                 <Content />
