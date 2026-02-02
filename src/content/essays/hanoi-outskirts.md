@@ -1,7 +1,7 @@
 ---
 title: "At the outskirts of Hanoi"
 draft: false
-publishedDate: 2026-01-31
+publishedDate: 2026-02-03
 introduction: |
     Ever since I first lived in Hanoi, I was struck by how easily large swathes of buildings would be demolished in order to give way to the expansion of the city.
 
