@@ -74,7 +74,7 @@ Though there have been examples of well-designed cities across history, most wer
 
 Comparatively, places such as Ocean Park follow a different logic altogether. 
 
-Marketed as a *world-class mega cities*, a *resort paradises*, and an *entertainment hubs*. Smart, sustainable, and of course, a great ROI for investors. These are products designed to attract capital first, and life –– so long as it supports the investment narrative –– second.
+Marketed as a *world-class mega cities*, *resort paradises*, and *entertainment hubs*. Smart, sustainable, and of course, a great ROI for investors. These are products designed to attract capital first, and life –– so long as it supports the investment narrative –– second.
 
 ![Advertisement for Alluvia City](/images/hanoiOutskirts-13.webp "Advertisement for Alluvia City")
 *Advertisement for Alluvia City, a separate development at the outskirts of Hanoi*
