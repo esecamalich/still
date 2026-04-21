@@ -10,7 +10,7 @@ highlight: False
 
 ***"Viva a Maẽ Soberana! Viva!"***
 
-El llamado y las respuestas a coro de los feligreses guiaban mi camino hacia la procesión que se avecinaba a la avenida central de Loulé. Desde los balcones de sus departamentos, familias enteras saludaban y arrojaban pétalos de rosas. Nietas guiaban a sus abuelas entre al creciente aglomeración alrededor de la santa. Pañuelos blancos blandían se mecían al aire, mientras los metales marcaban el paso.
+El llamado y las respuestas a coro de los feligreses guiaban mi camino hacia la procesión que se avecinaba por la avenida central de Loulé. Desde los balcones de sus departamentos, familias enteras saludaban y arrojaban pétalos de rosas. Nietas guiaban a sus abuelas entre al creciente aglomeración alrededor de la santa. Pañuelos blancos blandían se mecían al aire, mientras los metales marcaban el paso.
 
 ![](/images/fiestaGrande-loule-02.webp)
 
