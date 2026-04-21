@@ -1,0 +1,3 @@
+*Visitaciones Extrañas* es un proyecto fotográfico desarrollado a lo largo de casi 6 años de residencia en Bali, Indonesia. Surge a partir de una realización progresiva, al ver como mi trabajo inicial replicaba sin saberlo los clichés visuales heredados desde la época colonial y reforzados por figuras como el mexicano Miguel Covarrubias, cuya obra contribuyó a construir la imagen romantizada de la isla que persiste hasta hoy, casi cien años después.
+
+Durante mi estancia inicial en 2020, en el contexto del cierre de fronteras por la pandemia de COVID-19, esta repetición pasó inadvertida. No fue sino hasta mi regreso en 2023, cuando el choque ante la transformación radical de la isla tras la reapertura al turismo masivo me llevó a buscar un nuevo lenguaje visual.
