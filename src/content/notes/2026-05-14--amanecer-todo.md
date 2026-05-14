@@ -1,4 +1,4 @@
-# El amanecer de todo
+# El amanecer de una nueva era
 
 Viviendo el día a día, es fácil ver nuestra experiencia como algo aparte del resto de la historia. 
 
@@ -20,8 +20,8 @@ Otorgo el beneficio de la duda a aquellas personas empeñadas en hacer triunfar 
 
 Más que el relego del Ser Humano a segundo plano, lo que me hace hesitar viene precisamente de estudiar el desarrollo de tecnologías previas:
 
-- El telégrafo descontextualizando el tipo de información a la que tenemos acceso.
-- La televisión reduciendo las capacidades discursivas a bloques cortos entre espacios publicitarios.
+- El telégrafo, descontextualizando el tipo de información a la que tenemos acceso.
+- La televisión, reduciendo las capacidades discursivas a bloques cortos entre espacios publicitarios.
 
 El Internet mismo, alguna vez aclamado como símbolo de libertad, hoy en día se encuentra prácticamente monopolizado por corporaciones trabajando por los intereses de unos cuantos magnates.
 
@@ -34,6 +34,8 @@ En un mundo como el de hoy, donde el capital equivale a fuerza, su rechazo es ca
 ¿Existe alternativa?
 
 Viendo la forma tan rápida en cómo la IA pasó de resolver problemas científicos complicados, a la generación de *slop* en cantidades astronómicas, pareciera que no. Sin soluciones concretas, y con la actitud clásica de Silicon Valley –– muévete rápido, rompe cosas –– es más importante que nunca poner atención a su desenvolvimiento y usar estas nuevas herramientas con precaución.
+
+En este amanecer de una nueva era, nos encontramos una vez más frente a un posible quiebre en el tejido de nuestra identidad como humanos, en nombre del inevitable progreso. Las voces que claman por esto, lo hacen en pos de "nuestro beneficio", sin haberse primero detenido a preguntar si este –– nuestro supuesto destino –– es verdaderamente lo que queremos.
 
 
 "La historia es escrita por los vencedores," es una de las frases clásicas que he escuchado a lo largo de toda mi vida
