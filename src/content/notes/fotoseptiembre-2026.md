@@ -14,7 +14,13 @@ Bali.
 
 Isla paraíso. 
 
-Tan cimentada está su imagen en la conciencia colectiva, que es difícil encontrar algo nuevo que decir, sin riesgo a molestar a alguien. Pero como muchos otros *bules* antes de mi, tuve la osadía de querer hablar sobre la esencia –– el *taksu* –– de Bali.
+Tan cimentada está su imagen en la conciencia colectiva, es difícil encontrar algo nuevo que decir sin riesgo a molestar los intereses a alguien. Pero como muchos otros *bules* antes de mi, tuve la osadía de querer hablar sobre el Bali verdadero.
+
+Mucho se ha dicho ya sobre lo que se ha perdido al progreso y la modernidad, al turismo.
+
+Bali no se puede entender. Sólo se siente. {{Cuando crees conocerle, no lo es.}} ¿Que cuál es mi argumento? Dejar el corazón guiar más que a la mente. 
+
+Te despiertas con el cantar de los gallos, antes del amanecer. Al fondo de la aldea se alcanza a oír el hueco llamado del *kul-kul*.
 
 ---
 
@@ -27,3 +33,9 @@ Llevo meses, si no años, dándole vueltas a mi trabajo fotográfico en Bali. De
 Lo único que quiero es que mi trabajo honre a la isla, muestre de lo que soy capaz, me abra nuevas oportunidades y me permita vivir de ello sin tener que vender mi alma.
 
 *¿Será posible hacer una exhibición sobre algo de lo que no tengo derecho a hablar?*
+*¿Cómo le puedo hacer entender lo que es Bali a alguien que no sabe nada al respecto, en 30 fotografías?*
+
+
+---
+
+Una de las cosas que más me fascina de Bali es el hecho de que es prácticamente imposible separar lo que sacro de lo mundano.
