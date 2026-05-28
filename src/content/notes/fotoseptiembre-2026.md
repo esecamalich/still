@@ -35,6 +35,13 @@ Lo único que quiero es que mi trabajo honre a la isla, muestre de lo que soy ca
 *¿Será posible hacer una exhibición sobre algo de lo que no tengo derecho a hablar?*
 *¿Cómo le puedo hacer entender lo que es Bali a alguien que no sabe nada al respecto, en 30 fotografías?*
 
+Quiero que alguien que nunca haya estado en Bali sea introducido a la isla de una manera honesta, que aprendan un poco sobre ella, pero que sobre todo sientan un poco de lo que yo sentí al vivir ahí, desde lo bueno a lo malo, sin caer en juicios ni ataques de moralidad. Ultimadamente, esta debe ser un *feel-good event*. 
+
+Actúa básicamente como una introducción, hecha en base a conocimientos profundos pero fácil de digerir.
+p
+Es importante también resaltar la casualidad -- el hecho de que cada fotografía surgió de un encuentro fortuito.
+
+No es una tesis doctoral.
 
 ---
 

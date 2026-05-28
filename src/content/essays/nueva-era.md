@@ -28,7 +28,7 @@ Más que el relego del Ser Humano a segundo plano, lo que me hace hesitar viene 
 
 - El telégrafo, propiciando el envío de información a largas distancias y descontextualizando el tipo de información a la que tenemos acceso.
 - La televisión, reduciendo las capacidades discursivas a bloques cortos entre espacios publicitarios.
-- El internet, alguna vez aclamado como símbolo de libertad, hoy en día se encuentra prácticamente monopolizado por corporaciones trabajando por los intereses de unos cuantos magnates.
+- El Internet, alguna vez aclamado como símbolo de libertad, hoy en día se encuentra prácticamente monopolizado por corporaciones trabajando por los intereses de unos cuantos magnates.
 
 Es en este contexto que nos llega la IA –– la última gran plataforma hacia la libertad, propiciando ya nuevas metodologías para la ejecución de genocidios, vigilancia masiva.
 
