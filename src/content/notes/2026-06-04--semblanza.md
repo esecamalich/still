@@ -1,0 +1,9 @@
+Sergio Camalich Morales, nacido en Hermosillo, Sonora, el 16 de junio de 1989, es un fotógrafo que durante más de una década ha desarrollado una práctica centrada en la observación de la vida cotidiana, los símbolos y las formas de representación que configuran distintos contextos culturales, trabajando entre México, Europa, África y el Sudeste Asiático. Su trabajo explora las similitudes y resonancias que emergen entre culturas aparentemente distintas, prestando especial atención a los elementos visuales que revelan tanto sus particularidades como sus puntos de encuentro.
+
+Su formación como Diseñador Gráfico ha influido profundamente en su aproximación a la fotografía, particularmente en su interés por la tipografía, la señalética, la iconografía popular y otros elementos visuales presentes en el espacio cotidiano. A través de ellos, investiga la manera en que la cultura, la historia y los intercambios entre sociedades se manifiestan en formas visuales ordinarias que con frecuencia pasan desapercibidas.
+
+Entre sus publicaciones destacan dos libros fotográficos: *Estuve Aquí* (2017), que compila sus primeros años de viaje como mochilero, y *Lost (in) Paradise* (2022), una exploración visual y textual de Bali durante y después de la pandemia. Además, algunas de sus fotografías formaron parte de una exposición colectiva en el Museo de Etnología de Vietnam (2019), organizada por la Embajada de México en Vietnam.
+
+Ha impartido pláticas en la Universidad Autónoma de Baja California (2017), Setter Bali (2023) y el Instituto Sonorense de Cultura (2026), y ha sido entrevistado por medios como *El Imparcial*, *El Sol de Hermosillo* y Stereo 100.3.
+
+Actualmente desarrolla *Warna-Warna: Los Colores de Bali*, su primera exposición individual, una exploración de la cultura visual balinesa construida a partir de seis años de trabajo fotográfico realizado en Indonesia.

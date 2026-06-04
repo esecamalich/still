@@ -1,5 +1,7 @@
 # Warna-Warna: Los Colores de Bali
 
+{insertar definición de 'warna' aquí}
+
 *El color puede contar una historia tanto como cualquier otro sujeto.*
 
 En Bali, hablar de colores es hablar de un orden en el Universo y la forma en como este se manifiesta en las diferentes capas que lo conforman –– un mandala que se repite infinitamente, desde el microcosmos hasta el macrocosmos. 
