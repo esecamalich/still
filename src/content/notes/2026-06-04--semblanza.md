@@ -6,4 +6,4 @@ Entre sus publicaciones destacan dos libros fotográficos: *Estuve Aquí* (2017)
 
 Ha impartido pláticas en la Universidad Autónoma de Baja California (2017), Setter Bali (2023) y el Instituto Sonorense de Cultura (2026), y ha sido entrevistado por medios como *El Imparcial*, *El Sol de Hermosillo* y Stereo 100.3.
 
-Actualmente desarrolla *Warna-Warna: Los Colores de Bali*, su primera exposición individual, una exploración de la cultura visual balinesa construida a partir de seis años de trabajo fotográfico realizado en Indonesia.
+Actualmente desarrolla *Warna-Warna: Los Colores de Bali*, su primera exposición individual, una exploración de la cultura visual balinesa construida a partir de seis años de trabajo fotográfico realizado en Indonesia, a inaugurarse el 5 de septiembre de 2026 en la Casa de la Cultura de Hermosillo.
