@@ -7,7 +7,6 @@ introduction: |
     first question coming to mind,
     as a solution to the problem
     ever present in this head.
-excerpt: "Example excerpt"
 thumbnail: "/images/gamification.webp"
 categories: ['Poetry']
 highlight: False
