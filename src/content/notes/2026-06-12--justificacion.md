@@ -1,0 +1,5 @@
+Desde épocas coloniales, Bali ha sido el objeto de una campaña de Branding enfocada en asegurarse de que todos los aspectos que representan a la isla puedan ser empaquetados de manera fácil y rápida para su consumo. Entre los recursos más aprovechados han estado aquellos descritos por artistas indonesios modernos, como Sudjojono, la llamada trifecta de las Mooi Indië: los campos de arroz, las palmeras y los volcanes.
+
+Atraídos por imágenes exóticas del paraíso terrenal, los primeros *jetsetters* comenzaron a llegar en parvadas a inicios de los 1900’s, al mismo tiempo que los balineses se veían forzados a explicarle a sus colonizadores cómo diferenciar entre religión, cultura y tradición — conceptos que previamente no existían en el vocabulario balinés.
+
+Esto ha dado como resultado un quiebre en la identidad balinesa. Lo que antes era reservado para los templos y las ceremonias sagradas, hoy es expuesto felizmente a grupos de turistas, o vendido a escalas industriales en los mercados. Aún así, todo mundo cree saber qué es “El Verdadero Bali”, aunque parezca ni los balineses mismos lo sepan.
