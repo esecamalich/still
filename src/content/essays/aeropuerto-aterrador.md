@@ -23,9 +23,11 @@ El avión se sacudió y balanceó durante todo el descenso, pero nunca se rindi�
 En cuanto nos detuvimos, un grupo de estudiantes locales que viajaba con nosotros estalló en aplausos, 
 risas nerviosas y gritos de alivio. Todo el mundo a bordo iba colocado de adrenalina.
 
-Una vez a salvo en tierra, comenzaron a circular murmullos con el nombre del piloto.
+Una vez a salvo en tierra, comenzaron a circular murmullos con el nombre del piloto. 
 
-"Hoy vuela Filipe", comentaban algunos con complicidad. Por supuesto, era uno de los buenos.
+"Hoy vuela Filipe", comentaban algunos con complicidad. 
+
+Por supuesto, era uno de los buenos.
 
 ---
 
