@@ -22,6 +22,4 @@ Se viene una nueva etapa. Espero seguir atreviéndome a compartir más, tomar m�
 
 Algo tan sencillo como actualizar mi página de internet y publicar avances. ¿Quién lo hubiera pensado? Todo es esto es crucial para poder llegar en su momento a la pieza final. 
 
-Lo bueno es que el éxito toma muchas formas y llega a diferentes ritmos. No por nada es tan importante aprender a flotar.
-
 Si quieres más información y actualizaciones sobre este y otros proyectos, <a href="https://strangevisitations.com/" target="_blank">suscríbete aquí</a>.
