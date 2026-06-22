@@ -24,4 +24,4 @@ Algo tan sencillo como actualizar mi página de internet y publicar avances. ¿Q
 
 Lo bueno es que el éxito toma muchas formas y llega a diferentes ritmos. No por nada es tan importante aprender a flotar.
 
-Si quieres más información y actualizaciones sobre este y otros proyectos, suscríbete aquí.
+Si quieres más información y actualizaciones sobre este y otros proyectos, <a href="https://strangevisitations.com/" target="_blank">suscríbete aquí</a>.
