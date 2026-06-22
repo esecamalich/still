@@ -6,8 +6,8 @@ publishedDate: 2026-06-22
 introduction: |
     Continúo a encontrar el camino a seguir para <a href="https://strangevisitations.com/" target="_blank">Strange Visitations</a>.
 
-    Terminar este proyecto aún se siente lejos de mi alcance. Sin embargo, el mismo proceso de tratar de aplicar para fondos, becas, festivales y demás estímulos me ha ayudado a darle sentido a todas estas cuestiones que por mucho tiempo dan vueltas en mi cabeza.
-excerpt: "Terminar este proyecto aún se siente lejos de mi alcance. Sin embargo, el mismo proceso de tratar de aplicar para fondos, becas, festivales y demás estímulos me ha ayudado a darle sentido a todas estas cuestiones que por mucho tiempo dan vueltas en mi cabeza."
+    Terminar este proyecto aún se siente lejos de mi alcance. Sin embargo, el mismo proceso de tratar de aplicar para fondos, becas, festivales y demás estímulos me ha ayudado a darle sentido a muchas cuestiones que por un largo tiempo dieron vueltas en mi cabeza.
+excerpt: "Terminar este proyecto aún se siente lejos de mi alcance. Sin embargo, el mismo proceso de tratar de aplicar para fondos, becas, festivales y demás estímulos me ha ayudado a darle sentido a muchas cuestiones que por un largo tiempo dieron vueltas en mi cabeza."
 thumbnail: "/images/strange-visitations-2026-06-22--cover.webp"
 thumbnailCaption: "Potong Madu © Sergio Camalich Morales 2021"
 categories: ['Journal', 'Strange Visitations']
