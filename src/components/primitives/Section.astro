@@ -12,24 +12,26 @@ const {
 } = Astro.props;
 
 const Tag = as;
+const paddingClass = styles[`padding-${padding}`] || '';
 const paddingTopClass = paddingTop ? styles[`section__padding-top--${paddingTop}`] : '';
 const paddingBottomClass = paddingBottom ? styles[`section__padding-bottom--${paddingBottom}`] : '';
 
 const sectionClasses = [
   styles.section,
+  paddingClass,
   paddingTopClass,
   paddingBottomClass,
   className,
 ].filter(Boolean).join(' ');
+
+const containerClass = styles[`container-${size}`] || '';
 ---
 
 <Tag
   id={id}
   class={sectionClasses}
 >
-  <div class={`padding-${padding}`}>
-    <div class={`container-${size}`}>
-      <slot />
-    </div>
+  <div class={containerClass}>
+    <slot />
   </div>
 </Tag>
