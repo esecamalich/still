@@ -41,7 +41,12 @@ const seo = generateSEO({
 
 <BaseLayout navigation={false} {...seo}>
 
-	<Section id="bio" size="sm">
+	<Section 
+		id="bio" 
+		size="sm"
+		paddingTop="6xl"
+		paddingBottom="none"	
+	>
 		<Stack gap={{ base: '3xl' }} >
 			<TranslatedProfile />
 			<Stack gap={{ base: 'xs' }}>
@@ -63,6 +68,11 @@ Whether through <a href="https://makestuffthatmatters.com/" target="_blank" >des
 <a href="https://strangevisitations.com/" target="_blank" >photography</a>, or writing, 
 I'm drawn to the things hiding in plain sight: symbols, patterns, stories, 
 and the unexpected similarities between seemingly different worlds.
+
+---
+
+**Currently working on:**
+- <a href="https://strangevisitations.com/" target="_blank" >Strange Visitations</a>: Symbols of Religion, Culture, and Tradition in Modern Bali
 				`}
 			/>
 		</Stack>
@@ -70,8 +80,8 @@ and the unexpected similarities between seemingly different worlds.
 
 	<Section 
 		id="featured-images"
-		paddingTop="none"
-		paddingBottom="none"
+		paddingTop="xl"
+		paddingBottom="6xl"
 		size="xl"
 	>
 		<Grid gap="3xl">
@@ -93,6 +103,7 @@ and the unexpected similarities between seemingly different worlds.
 	<Section
 		id="latest-essays"
 		size="sm"
+		paddingBottom="6xl"
 	>
 		<Stack
 			gap={{ base: '3xl' }}

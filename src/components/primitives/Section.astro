@@ -1,4 +1,6 @@
 ---
+import styles from './Section.module.css';
+
 const {
   id = '',        // section anchor
   class: className = '',  // extra classes
@@ -10,13 +12,20 @@ const {
 } = Astro.props;
 
 const Tag = as;
-const paddingTopClass = paddingTop ? `section__padding-top--${paddingTop}` : '';
-const paddingBottomClass = paddingBottom ? `section__padding-bottom--${paddingBottom}` : '';
+const paddingTopClass = paddingTop ? styles[`section__padding-top--${paddingTop}`] : '';
+const paddingBottomClass = paddingBottom ? styles[`section__padding-bottom--${paddingBottom}`] : '';
+
+const sectionClasses = [
+  styles.section,
+  paddingTopClass,
+  paddingBottomClass,
+  className,
+].filter(Boolean).join(' ');
 ---
 
 <Tag
   id={id}
-  class={`section ${paddingTopClass} ${paddingBottomClass} ${className}`.trim()}
+  class={sectionClasses}
 >
   <div class={`padding-${padding}`}>
     <div class={`container-${size}`}>
