@@ -81,8 +81,10 @@ if (!normalized) {
   if (match) {
     const rawBaseName = match[1];
 
-    // Strip any trailing -<digits> (e.g. -320, -640, -1024)
-    const baseName = rawBaseName.replace(/-\d+$/, "");
+    // Strip only if it matches one of our known generated widths (e.g. -320, -640, -1024)
+    // This prevents stripping trailing numbers that are part of the filename (e.g., -01)
+    const widthPattern = WIDTHS.join('|');
+    const baseName = rawBaseName.replace(new RegExp(`-(${widthPattern})$`), "");
 
     const basePath = parts.slice(0, -1).join("/");
     // Build a .webp srcset: baseName-320.webp, baseName-640.webp, ...
