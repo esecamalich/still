@@ -1,0 +1,60 @@
+---
+import styles from './Masonry.module.css';
+
+const {
+  as = 'div',
+  id = '',
+  class: className = '',
+  // same tokens style as Grid
+  gap = '3xl',
+  min = '18rem',
+  // Optional: fixed columns (number). If omitted, layout is fluid by min.
+  columns,
+} = Astro.props as {
+  as?: keyof HTMLElementTagNameMap;
+  id?: string;
+  class?: string;
+  gap?: string;
+  min?: string;
+  columns?: number; // unify with Grid: <Masonry columns={3} />
+};
+
+const Tag = as as any;
+
+// Match Grid's resolver: tokens → CSS vars; raw values pass through
+const resolveSpace = (token: string) =>
+  token?.startsWith('var(') || token?.includes('clamp')
+    ? token
+    : `var(--space-${token})`;
+
+/*
+
+USAGE RULES
+
+// Fluid columns
+
+    <Masonry min="20rem" gap="xl">
+    (...content goes here)
+    </Masonry>
+
+
+// Fixed columns
+
+    <Masonry columns={3} gap="lg">
+    (...content goes here)
+    </Masonry>
+
+*/
+---
+<Tag
+  id={id}
+  class={`${styles.masonry} ${className || ''}`.trim()}
+  style={{
+    '--masonry-gap': resolveSpace(gap),
+    '--masonry-min': min,
+    // if columns provided, set a fixed count; otherwise 'auto' (fluid)
+    '--masonry-count': typeof columns === 'number' ? String(columns) : 'auto',
+  }}
+>
+  <slot />
+</Tag>

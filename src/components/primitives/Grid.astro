@@ -12,13 +12,13 @@ const {
 
 const Tag = as;
 
-const resolveSpace = (token) =>
+const resolveSpace = (token: string) =>
   token?.startsWith('var(') || token?.includes('clamp') ? token : `var(--space-${token})`;
 
 const inlineStyles = {
   '--min-col-width': min,
   '--grid-gap': resolveSpace(gap),
-  '--grid-columns': columns ?? 'auto-fit',
+  ...(columns ? { '--grid-columns': String(columns) } : {}),
 };
 
 /* 
@@ -28,8 +28,6 @@ const inlineStyles = {
 <Grid as="section" columns={3} gap="var(--space-xl)">
   (...content goes here)
 </Grid>
-
----
 
 // Example Usage: Fluid Auto Grid (No columns) // 
 
@@ -42,7 +40,7 @@ const inlineStyles = {
 
 <Tag
   id={id}
-  class={`${styles.grid} ${className}`.trim()}
+  class={`${styles.grid} ${columns ? styles.capped : ''} ${className}`.trim()}
   style={inlineStyles}
 >
   <slot />

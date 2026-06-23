@@ -1,9 +1,26 @@
 .grid {
   display: grid;
   gap: var(--grid-gap, var(--space-6xl));
-  grid-template-columns: repeat(
-    var(--grid-columns, auto-fit),
-    minmax(var(--min-col-width, 1fr), 1fr)
+
+  /* Base: fluid auto-grid */
+  /* When uncapped, allows as many columns as fit with the given min width */
+  --_min-col: var(--min-col-width, 18rem);
+  grid-template-columns: repeat(auto-fit, minmax(var(--_min-col), 1fr));
+}
+
+/* When `columns` is provided, cap the maximum number of columns.
+   We do this by raising the effective min width so >N columns can't fit. */
+.capped {
+  /* columns = var(--grid-columns) (e.g. 3)
+     computed min ensures at most N columns fit at any container width */
+  --_cols: var(--grid-columns);
+  --_gap: var(--grid-gap, var(--space-6xl));
+
+  /* Effective minimum width = the width of N equal columns *including* gaps */
+  --_min-col: max(
+    var(--min-col-width, 18rem),
+    calc((100% - (var(--_gap) * (var(--_cols) - 1))) / var(--_cols))
   );
-  /*container-type: inline-size;*/
+
+  grid-template-columns: repeat(auto-fit, minmax(var(--_min-col), 1fr));
 }

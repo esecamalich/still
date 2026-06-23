@@ -1,0 +1,28 @@
+.masonry {
+  /* prevent external grid/flex from killing columns */
+  display: block;
+
+  /* unified controls */
+  column-gap: var(--masonry-gap, 1rem);
+  column-width: var(--masonry-min, 18rem);
+  column-count: var(--masonry-count, auto);
+}
+
+/* Direct children = masonry items */
+.masonry > * {
+  /* inline-block helps items respect column width even if they create BFCs */
+  display: inline-block;
+  width: 100%;
+  margin-bottom: var(--masonry-gap, 1rem);
+
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+}
+
+/* Nice defaults for images inside items */
+.masonry img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
