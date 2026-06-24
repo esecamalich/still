@@ -32,5 +32,9 @@
         "Trúc",
         "Ubud",
         "Vincom"
-    ]
+    ],
+    "problems.exclude": {
+        "**/src/content/notes/**": true,
+        "**/src/content/essays/**": true
+    }
 }
