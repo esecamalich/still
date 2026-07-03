@@ -1,5 +1,8 @@
 # HouseSitMexico Growth & User Experience Review
 
+## Quick Notes
+
+
 ## Sections 
 
 ### User Dashboard

@@ -1,0 +1,13 @@
+Symbols:
+- Birds flying
+- Seagulls
+- Chimneys
+- Interesting light(?)
+- Odd moments
+- Flowers
+- Dogs? Animals?
+- Fences (as usual)
+- Street signs
+- Scooters
+- Tourism (again???)
+- Letters, words
