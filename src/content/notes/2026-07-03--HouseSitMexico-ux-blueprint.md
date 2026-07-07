@@ -17,3 +17,8 @@
 - Still missing a headline for Success Stories
 
 - No secondary actions for How It Works page?
+- I like the visual idea of an overview, but simply having a single line label doesn't seem very "explicative"
+- Why "learn more" as the CTA in the Choose Your Journey section? Can't think of where else would I take a user at that point other than to their correspondent main actions.
+- Chat is not following my document format. Please follow it.
+
+- Latest version of Choose Your Journey is funky. You're telling homeowners to "Learn how to publish a listing, receive applications, and choose the right person to care for your home and pets." but then send them to publish a listiing, while you're telling sitters to "Learn how to create a strong profile, apply for listings, and become part of the HouseSitMexico community." and then send them to browse available sits
