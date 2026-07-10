@@ -10,7 +10,7 @@ categories: ['Photo Essays', 'Spanish']
 highlight: False
 ---
 
-Hay varias cosas que he notado de poner atención a la propaganda que se nos adoctrina por medio de los diferentes medios de comunicación, desde la mercadotecnia hasta la señalética, a lo largo de un mundo predominantemente visual.
+Hay varias cosas que he notado de poner atención a la propaganda que se nos adoctrina por medio de los diferentes medios de comunicación, desde la mercadotecnia hasta la señalética, pasando por el campo de la "contaminación visual" a lo largo de un mundo predominantemente visual.
 
 Una de ellas ha sido aprender a notar no solo las presencias, sino también las ausencias. No solo lo superficialmente observable, sino lo verdaderamente desapercibido. Lo desaparecido de todo campo presencial.
 
