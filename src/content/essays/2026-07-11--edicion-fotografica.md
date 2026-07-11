@@ -1,7 +1,7 @@
 ---
 title: "Tipos de Edición Fotográfica"
 slug: "edicion-fotografica"
-draft: True
+draft: False
 publishedDate: 2026-07-11
 introduction: |
     Sigo aún tratando de internalizar que una parte importante del proceso fotográfico es su edición. 
