@@ -16,13 +16,13 @@ highlight: True
 
 Por un lado, antes solía creer que la edición de cada foto era re-importante, en cuestion de cosas como colores vibrantes, contraste y saturación. Pero el tiempo me llevó a entender que –– cuando hablamos de edición –– nos podemos expandir más allá de la imagen singular y, en cambio, considerarla dentro de un grupo; una secuencia. Dípticos, trípiticos y *so on.* Hasta formar conceptos complejos por medio de pura imagen. 
 
-Ahora me parece importante preguntarme, "¿de qué manera cambia el significado de esto, en comparación con aquello?" Como cualquier lenguaje, la fotografía tiene sus excepciones. Es así como comienza el juego del arte.
+Ahora me parece importante preguntarme, "¿de qué manera cambia el significado de esto, en comparación con aquello?" Como cualquier lenguaje, la fotografía tiene sus excepciones. Es así como comienza el juego hacer arte.
 
 Por ende, al preguntarme, "¿cuál es la parte más importante del proceso fotográfico?" 
 
-¿Además de tomar la foto, obviamente? 
+¿Además de tomar la foto, *obviamente*? 
 
-Sí, editarla. Pero editarla bien, completamente. No quedarse en la superficilidad de lo visualmente atractivo, sino pensar más allá de lo que se ve a primera vista. Un hilo, una conexión que se percibe si uno ve más con el corazón que con los ojos. Aquello que no se puede explicar, ni tiene lógica.
+Sí, editarla. Pero editarla bien. Completamente. No quedarse en la superficilidad de lo visualmente atractivo, sino pensar más allá de lo que se ve a primera vista. Un hilo, una conexión que se percibe si uno ve más con el corazón que con los ojos. Aquello que no se puede explicar, ni tiene lógica.
 
 Entonces, ¿cuántos tipos de edición llevamos? Por lo menos dos, si no me equivoco. 
 
