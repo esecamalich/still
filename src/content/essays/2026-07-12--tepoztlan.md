@@ -8,7 +8,7 @@ introduction: |
 excerpt: "Algunas fotillos mías, de nuestros primeros días en Tepoztlán."
 thumbnail: "/images/example.jpg"
 thumbnailCaption: "Example Caption"
-categories: ['Photo Essays', 'The Book Of Stuff', 'Spanish']
+categories: ['Photo Essays', 'Photography', 'Mexico']
 highlight: False
 ---
 
