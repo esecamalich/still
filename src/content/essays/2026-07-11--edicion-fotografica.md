@@ -5,6 +5,8 @@ draft: False
 publishedDate: 2026-07-11
 introduction: |
     Sigo aún tratando de internalizar que una parte importante del proceso fotográfico es su edición. 
+
+    Aquí un ejemplo de a lo que me refiero:
 excerpt: "Sigo aún tratando de entender que una parte importante del proceso fotográfico es su edición."
 thumbnail: "/images/edicion-fotografica.webp"
 thumbnailCaption: "ERNST HAAS: New York in Color 1952-1962 (Prestel, 2021), video de Andras Ikladi"
