@@ -51,4 +51,5 @@ Por lo pronto, para quienes llegaron hasta acá, aquí les van algunos de mis pa
 
 - [Link al video original](https://www.youtube.com/watch?v=Bo4yMIiTmuQ)
 - [Música de fondo](https://www.youtube.com/watch?v=Qr-ydxW4Cx0)
+- [Strange Visitations](https://strangevisitations.com/)
 - [Newsletter](https://makestuffthatmatters.com/subscribe/)
