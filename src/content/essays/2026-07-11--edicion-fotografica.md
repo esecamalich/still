@@ -6,11 +6,11 @@ publishedDate: 2026-07-11
 introduction: |
     Sigo aún tratando de internalizar que una parte importante del proceso fotográfico es su edición. 
 
-    Aquí un ejemplo de a lo que me refiero:
+    Aquí un ejemplo de lo que me refiero:
 excerpt: "Sigo aún tratando de entender que una parte importante del proceso fotográfico es su edición."
 thumbnail: "/images/edicion-fotografica.webp"
 thumbnailCaption: "ERNST HAAS: New York in Color 1952-1962 (Prestel, 2021), video de Andras Ikladi"
-categories: ['Photo Books', 'Photography']
+categories: ['Photo Books', 'Photography', 'Mexico']
 highlight: True
 ---
 
@@ -37,11 +37,15 @@ Sí, editarla. Pero editarla bien. Completamente. No quedarse en la superficilid
 
 Entonces, ¿cuántos tipos de edición llevamos? Por lo menos dos, si no me equivoco. 
 
-Bueno, [échenme otro que se sepan.](mailto:sergio@camali.ch)
+Bueno, [échenme un correo con algún otro que se sepan.](mailto:sergio@camali.ch)
 
-Por lo pronto, para quienes llegaron hasta acá, aquí les van algunas secuencias mías de diferentes proyectos 👇
+Por lo pronto, para quienes llegaron hasta acá, aquí les van algunos de mis pares de fotografías tomadas en diferentes lugares de México, este 2026:
 
-
+![Tepoztlán, Morelos](/public/images/mexico-2026--01.webp) 
+![Hermosillo, Sonora](/public/images/mexico-2026--02.webp) 
+![Frontera Norte](/public/images/mexico-2026--03.webp) 
+![Mexicali, Baja California](/public/images/mexico-2026--04.webp) 
+![Ciudad de México](/public/images/mexico-2026--05.webp) 
 
 ---
 
