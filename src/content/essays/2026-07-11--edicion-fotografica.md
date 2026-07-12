@@ -18,10 +18,10 @@ Por un lado, antes solía creer que la edición de cada foto era re-importante, 
 
 Ahora me parece importante preguntarme, "¿de qué manera cambia el significado de esto, en comparación con aquello?" Como cualquier lenguaje, la fotografía tiene sus excepciones. Es así como comienza el juego hacer arte.
 
-![](/public/images/edicion-fotografica--02.webp)
-![](/public/images/edicion-fotografica--03.webp)
-![](/public/images/edicion-fotografica--04.webp)
-![](/public/images/edicion-fotografica--05.webp)
+![](/images/edicion-fotografica--02.webp)
+![](/images/edicion-fotografica--03.webp)
+![](/images/edicion-fotografica--04.webp)
+![](/images/edicion-fotografica--05.webp)
 
 Por ende, al preguntarme, "¿cuál es la parte más importante del proceso fotográfico?" 
 
@@ -29,11 +29,11 @@ Por ende, al preguntarme, "¿cuál es la parte más importante del proceso fotog
 
 Sí, editarla. Pero editarla bien. Completamente. No quedarse en la superficilidad de lo visualmente atractivo, sino pensar más allá de lo que se ve a primera vista. Un hilo, una conexión que se percibe si uno ve más con el corazón que con los ojos. Aquello que no se puede explicar, ni tiene lógica.
 
-![](/public/images/edicion-fotografica--06.webp)
-![](/public/images/edicion-fotografica--07.webp)
-![](/public/images/edicion-fotografica--08.webp)
-![](/public/images/edicion-fotografica--09.webp)
-![](/public/images/edicion-fotografica--10.webp)
+![](/images/edicion-fotografica--06.webp)
+![](/images/edicion-fotografica--07.webp)
+![](/images/edicion-fotografica--08.webp)
+![](/images/edicion-fotografica--09.webp)
+![](/images/edicion-fotografica--10.webp)
 
 Entonces, ¿cuántos tipos de edición llevamos? Por lo menos dos, si no me equivoco. 
 
@@ -41,11 +41,11 @@ Bueno, [échenme un correo con algún otro que se sepan.](mailto:sergio@camali.c
 
 Por lo pronto, para quienes llegaron hasta acá, aquí les van algunos de mis pares de fotografías tomadas en diferentes lugares de México, este 2026:
 
-![Tepoztlán, Morelos](/public/images/mexico-2026--01.webp) 
-![Hermosillo, Sonora](/public/images/mexico-2026--02.webp) 
-![Frontera Norte](/public/images/mexico-2026--03.webp) 
-![Mexicali, Baja California](/public/images/mexico-2026--04.webp) 
-![Ciudad de México](/public/images/mexico-2026--05.webp) 
+![Tepoztlán, Morelos](/images/mexico-2026-01.webp) 
+![Hermosillo, Sonora](/images/mexico-2026--02.webp) 
+![Frontera Norte](/images/mexico-2026--03.webp) 
+![Mexicali, Baja California](/images/mexico-2026--04.webp) 
+![Ciudad de México](/images/mexico-2026--05.webp) 
 
 ---
 
