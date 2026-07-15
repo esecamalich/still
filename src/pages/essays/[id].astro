@@ -48,7 +48,7 @@ const relatedArticles = [...relatedByCategory, ...sortedArticles]
 import { generateSEO } from '@/utils/generateSEO.ts';
 const seo = generateSEO({
   title: post.data.title,
-  description: post.data.description,
+  description: post.data.excerpt ?? post.data.introduction ?? '',
   slug: `${post.data.slug ?? post.id}`,
   image: post.data.thumbnail,
   prefix: '/essays',
