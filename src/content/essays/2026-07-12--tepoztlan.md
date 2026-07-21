@@ -6,13 +6,11 @@ publishedDate: 2026-07-12
 introduction: |
     Algunas fotillos mías, de nuestros primeros días en Tepoztlán.
 excerpt: "Algunas fotillos mías, de nuestros primeros días en Tepoztlán."
-thumbnail: "/images/example.jpg"
-thumbnailCaption: "Example Caption"
+thumbnail: "/images/tepoztlan-01.webp"
 categories: ['Photo Essays', 'Photography', 'Mexico']
 highlight: False
 ---
 
-![](/images/tepoztlan-01.webp)
 ![](/images/tepoztlan-02.webp)
 ![](/images/tepoztlan-03.webp)
 ![](/images/tepoztlan-04.webp)
