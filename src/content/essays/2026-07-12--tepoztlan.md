@@ -1,7 +1,7 @@
 ---
 title: "Primeros Días en Tepoztlán"
 slug: "tepoztlan"
-draft: True
+draft: False
 publishedDate: 2026-07-12
 introduction: |
     Algunas fotillos mías, de nuestros primeros días en Tepoztlán.

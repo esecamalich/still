@@ -39,3 +39,7 @@ Pero divago...
 Desde que empecé a trabajar con flash, un mundo nuevo de habilidades y oportunidades se abrió. No que lo tenga todo bajo control –– fuera de eso –– pero los pequeños éxitos que adquiero *here and there* son suficientes para incitarme a seguir aprendiendo.
 
 ---
+
+- [Música de fondo](https://www.youtube.com/watch?v=STZI29ujeNs)
+- Próximo Libro: [Strange Visitations](https://strangevisitations.com/)
+- [Newsletter](https://makestuffthatmatters.com/subscribe/)
