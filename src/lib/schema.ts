@@ -1,8 +1,14 @@
 export const websiteSchema = (baseUrl: string) => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Sergio Camalich Morales",
+  "name": "Still",
   "url": baseUrl,
+  "description": "A quiet Astro theme for thoughtful publishing, essays, photography, and personal websites.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Make Stuff That Matters",
+    "url": "https://makestuffthatmatters.com"
+  },
   "potentialAction": {
     "@type": "SearchAction",
     "target": `${baseUrl}/search?q={search_term_string}`,
@@ -10,17 +16,22 @@ export const websiteSchema = (baseUrl: string) => ({
   }
 });
 
+
 export const orgSchema = (baseUrl: string) => ({
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Sergio Camalich Morales",
-  "url": baseUrl,
-  "logo": { "@type": "ImageObject", "url": `${baseUrl}/images/favicon.png` },
+  "name": "Make Stuff That Matters",
+  "url": "https://makestuffthatmatters.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${baseUrl}/images/favicon.png`
+  },
   "sameAs": [
-    "https://www.youtube.com/@camali_ch",
+    "https://github.com/esecamalich",
     "https://www.instagram.com/camali.ch"
   ]
 });
+
 
 export const breadcrumbsSchema = (items: Array<{name:string; url:string}>) => ({
   "@context": "https://schema.org",
@@ -33,77 +44,17 @@ export const breadcrumbsSchema = (items: Array<{name:string; url:string}>) => ({
   }))
 });
 
-export const courseSchema = (args: {
-  name: string; description: string; inLanguage: string; baseUrl: string; pageUrl: string;
-  instance?: { name: string; startDate: string; endDate: string; joinUrl: string; price: number; currency: string; availability: "InStock"|"PreOrder"|"SoldOut"; validFrom?: string; };
-}) => {
-  const s:any = {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": args.name,
-    "description": args.description,
-    "inLanguage": args.inLanguage,
-    "provider": { "@type": "Organization", "name": "Sergio Camalich Morales", "sameAs": args.baseUrl }
-  };
-  if (args.instance) {
-    s.hasCourseInstance = [{
-      "@type": "CourseInstance",
-      "name": args.instance.name,
-      "courseMode": "online",
-      "startDate": args.instance.startDate,
-      "endDate": args.instance.endDate,
-      "location": { "@type": "VirtualLocation", "url": args.instance.joinUrl },
-      "offers": {
-        "@type": "Offer",
-        "url": args.pageUrl,
-        "price": String(args.instance.price),
-        "priceCurrency": args.instance.currency,
-        "availability": `https://schema.org/${args.instance.availability}`,
-        ...(args.instance.validFrom ? { "validFrom": args.instance.validFrom } : {}),
-        "seller": { "@type": "Organization", "name": "Sergio Camalich Morales" }
-      }
-    }];
-  }
-  return s;
-};
-
-export const productSchema = (args: {
-  name: string; description: string; image: string[]; pageUrl: string; sku?: string;
-  offers: Array<{ price: number; currency: string; availability: "InStock"|"PreOrder"|"SoldOut"|"LimitedAvailability"; priceValidUntil?: string; category?: string; }>;
-  rating?: { value: number; count: number };
-}) => ({
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": args.name,
-  ...(args.sku ? { "sku": args.sku } : {}),
-  "brand": { "@type": "Organization", "name": "Sergio Camalich Morales" },
-  "image": args.image,
-  "description": args.description,
-  ...(args.rating ? { "aggregateRating": { "@type": "AggregateRating", "ratingValue": String(args.rating.value), "reviewCount": String(args.rating.count) } } : {}),
-  "offers": args.offers.map(o => ({
-    "@type": "Offer",
-    "url": args.pageUrl,
-    "price": String(o.price),
-    "priceCurrency": o.currency,
-    "availability": `https://schema.org/${o.availability}`,
-    ...(o.priceValidUntil ? { "priceValidUntil": o.priceValidUntil } : {}),
-    ...(o.category ? { "category": o.category } : {})
-  }))
-});
-
-export const faqSchema = (qas: Array<{ q: string; a: string }>) => ({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": qas.map(({q, a}) => ({
-    "@type": "Question",
-    "name": q,
-    "acceptedAnswer": { "@type": "Answer", "text": a }
-  }))
-});
 
 export const blogPostingSchema = (args: {
-  headline: string; description: string; image: string[]; datePublished: string; dateModified: string; inLanguage: string; url: string;
-  authorName: string; authorUrl: string; publisherLogoUrl: string; publisherName: string;
+  headline: string;
+  description: string;
+  image: string[];
+  datePublished: string;
+  dateModified: string;
+  inLanguage: string;
+  url: string;
+  authorName?: string;
+  authorUrl?: string;
 }) => ({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -115,12 +66,30 @@ export const blogPostingSchema = (args: {
   "inLanguage": args.inLanguage,
   "mainEntityOfPage": args.url,
   "isAccessibleForFree": true,
-  "author": { "@type": "Person", "name": args.authorName, "url": args.authorUrl },
-  "publisher": { "@type": "Organization", "name": args.publisherName, "logo": { "@type": "ImageObject", "url": args.publisherLogoUrl } }
+  "author": {
+    "@type": "Person",
+    "name": args.authorName || "Sergio Camalich",
+    "url": args.authorUrl || "https://makestuffthatmatters.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Make Stuff That Matters",
+    "url": "https://makestuffthatmatters.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${new URL(args.url).origin}/images/favicon.png`
+    }
+  }
 });
 
+
 export const personSchema = (args: {
-  name: string; jobTitle: string; description: string; imageUrl: string; aboutUrl: string; sameAs: string[]; orgUrl: string;
+  name: string;
+  jobTitle: string;
+  description: string;
+  imageUrl: string;
+  aboutUrl: string;
+  sameAs: string[];
 }) => ({
   "@context": "https://schema.org",
   "@type": "Person",
@@ -130,5 +99,9 @@ export const personSchema = (args: {
   "image": args.imageUrl,
   "url": args.aboutUrl,
   "sameAs": args.sameAs,
-  "affiliation": { "@type": "Organization", "name": "Sergio Camalich Morales", "url": args.orgUrl }
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Make Stuff That Matters",
+    "url": "https://makestuffthatmatters.com"
+  }
 });
