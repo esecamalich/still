@@ -1,0 +1,60 @@
+---
+import Section from "@/components/primitives/Section.astro";
+import Stack from "@/components/primitives/Stack.astro";
+import Link from "@/components/primitives/Link.astro";
+import Text from "@/components/primitives/Text.astro";
+
+const links = [
+	{ name: 'GitHub', href: 'https://github.com/esecamalich' },
+	{ name: 'Make Stuff That Matters', href: 'https://makestuffthatmatters.com' },
+	{ name: 'License', href: '/license' },
+	{ name: 'Email', href: 'mailto:sergio@camali.ch' },
+]
+
+const year = new Date().getFullYear();
+---
+
+<Section
+    padding="3xl"
+    paddingTop="none"
+    paddingBottom="6xl"
+    size="sm"
+>
+    <Stack>
+        <Stack direction={{ base: 'row' }} class="text-body-sm">
+            { links.map((link) => (
+                <Link 
+                    href={link.href} 
+                    external={link.href.startsWith('http')}
+                >
+                    {link.name}
+                </Link>
+            ))}
+        </Stack>
+
+        <Stack
+            direction={{ base: 'column' }} 
+            class="text-body-sm"
+        >
+            <Text variant="subtle">
+                {year} © Still — an open-source Astro theme by 
+                <Link
+                    href="https://makestuffthatmatters.com"
+                    external={true}
+                >
+                    Sergio Camalich
+                </Link>
+            </Text>
+
+            <Text variant="subtle">
+                Made with care at
+                <Link
+                    href="https://makestuffthatmatters.com"
+                    external={true}
+                >
+                    Make Stuff That Matters
+                </Link>
+            </Text>
+        </Stack>
+    </Stack>
+</Section>
