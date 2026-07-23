@@ -1,5 +1,0 @@
-El título de este proyecto no fue escogido a la ligera. Detrás de el existe toda una investigación de más de 6 años — toda una vida a las velocidades de los tiempos modernos — pero apenas un blip en términos del espacio-tiempo.
-
-Desde épocas coloniales, Bali ha sido el objeto de una campaña de Branding enfocada en asegurarse de que todos los aspectos que representan a la isla puedan ser empaquetados de manera fácil y rápida para su consumo. Entre los recursos más aprovechados han estado aquellos descritos por artistas indonesios modernos, como Sudjojono, la llamada trifecta de las Mooi Indië: los campos de arroz, las palmeras y los volcanes.
-
-Atraídos por imágenes exóticas del paraíso terrenal, los primeros jetsetters comenzaron a llegar en parvadas a inicios de los 1900’s, al mismo tiempo que los balineses se veían forzados a explicarle a sus colonizadores cómo diferenciar entre religión, cultura y tradición — conceptos que previamente no existían en el vocabulario balinés.

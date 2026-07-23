@@ -1,1 +1,0 @@
-El graffiti en Lisboa es –– a riesgo de sonar exagerado –– monumental.

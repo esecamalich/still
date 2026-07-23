@@ -24,6 +24,8 @@ const articles = [
 */
 
 import { getCollection } from 'astro:content';
+
+// Load Articles/Essays
 const allArticles = await getCollection('essays')
 
 const { latestArticles = allArticles, limit = 5 } = Astro.props;
@@ -32,6 +34,15 @@ const sortedArticles = latestArticles
 	.filter((a) => a.data.draft != true) // Exclude drafts
 	.sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()) // Sort by published date
 	.slice(0, limit ?? Infinity) // Only slices if limit is defined
+
+
+// Load Links
+const allLinks = await getCollection('links')
+
+const links = await getCollection(
+  "links",
+  ({ data }) => data.status === "published" // Filter Callback
+);
 
 // SEO configuration
 import { generateSEO } from '@/utils/generateSEO.ts';

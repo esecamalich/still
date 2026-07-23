@@ -1,3 +1,0 @@
-Before the Balinese were ever granted the opportunity to define their identity at the global scale, their colonizers had already decided for them how they should be thought as. A museum of a great former empire, a gentle society of artists — Paradise on Earth.
-
-Ever since then, Bali has been expected to perform up to the expectations, by catering to the needs and whims of their ever growing clientele — the bohemian cosmopolites of the early 20th century, the cultural tourists of the New Order era, the hordes of refugees since post-pandemic times.

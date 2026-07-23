@@ -1,1 +1,0 @@
-From *Palinggih* comes *Poleng*. From the need to visualize the focus of our offerings, a sudden realization –– though the world might seem divided into black and white, reality's but one.

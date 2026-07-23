@@ -17,6 +17,24 @@ const essays = defineCollection({
     })
 })
 
+const links = defineCollection({
+    loader: glob({ 
+        pattern: "**/*.md", // TODO: Describe what this line does in a comment 
+        base: "./src/content/links" // The Path to your Content Collection folder
+    }), 
+    schema: z.object({
+        // List of Content Collection Fields
+        url: z.string().url(), // Validates String is an URL
+        title: z.string().optional(),
+        status: z.enum([
+            "inbox",
+            "published",
+            "archived",
+        ]).default("inbox"),
+    })
+})
+
 export const collections = {
     essays,
+    links
 }
