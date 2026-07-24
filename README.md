@@ -1,5 +1,7 @@
 # Still
 
+---
+
 **View the live demo:**
 https://still.makestuffthatmatters.com/
 
