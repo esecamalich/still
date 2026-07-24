@@ -1,5 +1,8 @@
 # Still
 
+**View the live demo:**
+https://still.makestuffthatmatters.com/
+
 A quiet Astro theme for thoughtful publishing.
 
 Still is an open-source Astro theme designed for essays, photography, notes, and personal websites that value clarity over complexity.
