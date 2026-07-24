@@ -1,28 +1,31 @@
 ---
 const {
-  title = 'Sergio Camalich Morales',
-  description = 'Chief Maker of Stuff',
-  image = '/images/sergioCamalich.webp',
-  canonical = 'https://camali.ch',
+  title = 'Still',
+  description = 'A quiet Astro theme for thoughtful publishing.',
+  image = '/images/still.jpg',
+  canonical = 'https://still.makestuffthatmatters.com',
   robots = 'index, follow',
-  type = 'website'
+  type = 'website',
+  author = 'Still'
 } = Astro.props;
 
 const siteOrigin =
   (() => {
     try { return new URL(canonical).origin; } catch {}
-    try { return Astro.site?.origin } catch {}
-    return 'https://camali.ch';
+    try { return Astro.site?.origin; } catch {}
+    return 'https://still.makestuffthatmatters.com';
   })();
 
 const absoluteImage = (() => {
   try {
-      // If already absolute, keep as-is
-      if (/^https?:\/\//i.test(image)) return image;
-      // Resolve relative/protocol-relative against the site origin
-      return new URL(image.replace(/^\/\//, 'https://'), siteOrigin).toString();
+    if (/^https?:\/\//i.test(image)) return image;
+
+    return new URL(
+      image.replace(/^\/\//, 'https://'),
+      siteOrigin
+    ).toString();
   } catch {
-      return `${siteOrigin}/images/sergioCamalich.webp`;
+    return `${siteOrigin}/images/still.jpg`;
   }
 })();
 ---
@@ -30,13 +33,14 @@ const absoluteImage = (() => {
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="robots" content={robots} />
-<meta name="author" content="Sofia Nobre" />
+<meta name="author" content={author} />
+
 <link rel="canonical" href={canonical} />
 
 <!-- Open Graph -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonical} />
-<meta property="og:site_name" content="Sergio Camalich" />
+<meta property="og:site_name" content="Still" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={absoluteImage} />

@@ -4,16 +4,17 @@
 // @ts-ignore: no type declarations for external side-effect stylesheet
 import '@mstm/mstm-styles';
 import '@/styles/global.css';
+
 import SiteNavBar from "@/components/navigation/SiteNavBar.astro";
-//import Newsletter from "@/components/sections/Newsletter.astro";
-//import Footer from "@/components/sections/Footer.astro";
-
 import SEOHead from "@/components/meta/SEOHead.astro";
-
 import Schema from "@/components/meta/Schema.astro";
+
 import {
-  websiteSchema, orgSchema, breadcrumbsSchema,
-  courseSchema, productSchema, blogPostingSchema, faqSchema, personSchema
+  websiteSchema,
+  orgSchema,
+  breadcrumbsSchema,
+  blogPostingSchema,
+  personSchema
 } from "@/lib/schema";
 
 const { 
@@ -22,40 +23,48 @@ const {
   image, 
   canonical, 
   className = '', 
-  newsletter = true,
   navigation = true,
-  footer = true,
   robots,
   type,
-  schemaType,       // 'course' | 'product' | 'blog' | 'faq' | 'about' | undefined
-  schemaData,       // object for the chosen type
-  breadcrumbs,      // [{ name, url }, ...]
-  customSchemas     // advanced override: array of full JSON-LD objects
+  schemaType,
+  schemaData,
+  breadcrumbs,
+  customSchemas
 } = Astro.props;
 
-// Derive base URL from canonical (falls back to site root)
+
+// Derive base URL from canonical
 const baseUrl = (() => {
-  try { return new URL(canonical).origin; } catch { return "https://camali.ch"; }
+  try {
+    return new URL(canonical).origin;
+  } catch {
+    return "https://still.makestuffthatmatters.com";
+  }
 })();
 
-// Always-on site schemas
+
+// Always-on schemas
 const siteSchemas = [
   websiteSchema(baseUrl),
   orgSchema(baseUrl),
   ...(breadcrumbs ? [breadcrumbsSchema(breadcrumbs)] : [])
 ];
 
+
 // Page-specific schemas
 let pageSchemas: any[] = [];
+
 if (Array.isArray(customSchemas)) {
   pageSchemas = customSchemas;
 } else if (schemaType && schemaData) {
   switch (schemaType) {
-    case 'course': pageSchemas.push(courseSchema(schemaData)); break;
-    case 'product': pageSchemas.push(productSchema(schemaData)); break;
-    case 'blog': pageSchemas.push(blogPostingSchema(schemaData)); break;
-    case 'faq': pageSchemas.push(faqSchema(schemaData.qas)); break;
-    case 'about': pageSchemas.push(personSchema(schemaData.person)); break;
+    case "blog":
+      pageSchemas.push(blogPostingSchema(schemaData));
+      break;
+
+    case "about":
+      pageSchemas.push(personSchema(schemaData.person));
+      break;
   }
 }
 ---
@@ -132,11 +141,6 @@ if (Array.isArray(customSchemas)) {
     >
       <img class="essay-preview-flyout__image" alt="" />
     </div>
-
-    <!--
-    {newsletter && <Newsletter />}
-    {footer && <Footer />}
-    -->
     
     <script is:inline>
       document.addEventListener("click", (ev) => {
@@ -144,7 +148,6 @@ if (Array.isArray(customSchemas)) {
         if (!(target instanceof Element)) return;
 
         const el = target.closest("[data-ga]");
-        if (!el || typeof window.gtag !== "function") return;
 
         const action   = el.getAttribute("data-ga");           // e.g. "buy"
         const label    = el.getAttribute("data-ga-label");     // optional

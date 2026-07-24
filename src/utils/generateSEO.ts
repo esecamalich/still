@@ -1,10 +1,10 @@
 type SEOInput = {
   title?: string;
   description?: string;
-  slug: string;          // absolute ("https://...") or path ("/courses/a1" or "courses/a1")
+  slug: string; // absolute ("https://...") or path ("/essays/example")
   image?: string;
   prefix?: string;
-  baseUrl?: string;      // pass Astro.site.origin from the caller if available
+  baseUrl?: string; // pass Astro.site.origin from caller if available
   indexable?: boolean;
   type?: string;
 };
@@ -21,13 +21,17 @@ export function generateSEO({
 }: SEOInput) {
   const isDev = import.meta.env.DEV;
 
-  // Never touch Astro.* here. Rely on a passed-in baseUrl, or fall back.
   const siteOrigin =
-    baseUrl || (isDev ? "http://localhost:4321" : "https://camali.ch");
+    baseUrl || (isDev ? "http://localhost:4321" : "https://still.makestuffthatmatters.com");
 
-  // Canonical: if slug is absolute, use it as-is; otherwise join to siteOrigin
+  const siteName = "Still";
+  const defaultDescription =
+    "A quiet Astro theme for thoughtful publishing.";
+
   const ABS = /^https?:\/\//i;
+
   let canonical: string;
+
   if (ABS.test(slug)) {
     canonical = slug;
   } else {
@@ -37,16 +41,14 @@ export function generateSEO({
     canonical = new URL(pathname, siteOrigin).toString();
   }
 
-  // Image normalization → absolute URL
   const PROTO_REL = /^\/\//;
-  const defaultLocal = "/images/sergioCamalich.webp";
+  const defaultLocal = "/images/still.jpg";
+
   const normalizeImage = (img?: string) => {
     if (!img) return new URL(defaultLocal, siteOrigin).toString();
     if (ABS.test(img)) return img;
     if (PROTO_REL.test(img)) return `https:${img}`;
-    if (/^\/?images\.ctfassets\.net\//i.test(img)) {
-      return `https://${img.replace(/^\/+/, "")}`;
-    }
+
     const localPath = img.startsWith("/") ? img : `/${img}`;
     return new URL(localPath, siteOrigin).toString();
   };
@@ -55,10 +57,8 @@ export function generateSEO({
   const robots = indexable ? "index, follow" : "noindex, nofollow";
 
   return {
-    title: title ? `${title} | Sergio Camalich` : "Sergio Camalich",
-    description:
-      description ||
-      "Chief Maker of Stuff",
+    title: title ? `${title} | ${siteName}` : siteName,
+    description: description || defaultDescription,
     canonical,
     image: fullImage,
     robots,

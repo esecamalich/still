@@ -26,8 +26,6 @@ const sortedArticles = latestArticles
 
 
 // Load Links
-const allLinks = await getCollection('links')
-
 const links = await getCollection(
   "links",
   ({ data }) => data.status === "published" // Filter Callback
@@ -141,6 +139,39 @@ for people who want a website that feels calm, durable, and entirely their own.
 			))}
 		</Stack>
 	</Section>
+
+	{links.length > 0 && (
+		<Section
+			id="links"
+			size="sm"
+			padding="3xl"
+			paddingBottom="6xl"
+		>
+			<Text
+				as="h3"
+				size="body-xs"
+				class="text-uppercase text-medium"
+				variant="subtle"
+				style="letter-spacing: 2px"
+			>
+				Useful Links
+			</Text>
+
+			<ul
+				style="padding-top: var(--space-3xl)"
+			>
+				{links.map((link) => (
+					<li>
+						<a href={link.data.url}>
+							{link.data.title ?? link.data.url}
+						</a>
+					</li>
+				))}
+			</ul>
+		</Section>
+	)}
+
+	<Divider />
 
 	<Footer />
 
