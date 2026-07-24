@@ -60,6 +60,10 @@ const seo = generateSEO({
 
     <style>
 
+        #article-content {
+            max-width: 100%;
+        }
+
         #article-content :global(img) {
             max-height: 480px;
             margin-inline: auto;
@@ -79,11 +83,14 @@ const seo = generateSEO({
 
         #article-content :global(p:has(img):has(em) img) {
             margin-bottom: 8px;
-            max-width: 100%;
         }
 
         #article-content :global(p:has(img):has(em) ~ hr) {
             margin-top: var(--size-md);
+        }
+
+        pre {
+            white-space: pre-space
         }
         
         @media (min-width:768px) {
