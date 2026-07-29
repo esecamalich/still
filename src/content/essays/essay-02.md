@@ -1,7 +1,7 @@
 ---
 title: "Installing Still"
 slug: "installing-still"
-draft: False
+draft: True
 publishedDate: 2026-07-23
 introduction: |
   Installing Still takes only a few minutes

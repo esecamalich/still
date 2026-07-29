@@ -1,7 +1,7 @@
 ---
 title: "The Quiet Website"
 slug: "the-quiet-website"
-draft: False
+draft: True
 publishedDate: 2026-07-19
 introduction: |
   The loudest websites are often the easiest to forget. A quiet website doesn't compete for attention—it earns it, one thoughtful page at a time.

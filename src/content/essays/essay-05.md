@@ -1,7 +1,7 @@
 ---
 title: "Building With Astro"
 slug: "building-with-astro"
-draft: False
+draft: True
 publishedDate: 2026-07-13
 introduction: |
   Every tool encourages a different way of thinking. Astro favors content over complexity, making it an ideal foundation for websites built to be read rather than endlessly interacted with.

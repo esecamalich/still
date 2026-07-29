@@ -1,7 +1,7 @@
 ---
 title: "Why We Still Read Slowly"
 slug: "why-we-still-read-slowly"
-draft: False
+draft: True
 publishedDate: 2026-07-21
 introduction: |
   The internet rewards speed. Reading asks for something else entirely. This essay is about reclaiming the pleasure of moving through ideas at a human pace.

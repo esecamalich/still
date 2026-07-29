@@ -1,7 +1,7 @@
 ---
 title: "The Internet Doesn't Need Another Theme"
 slug: "the-internet-doesnt-need-another-theme"
-draft: False
+draft: True
 publishedDate: 2026-07-23
 introduction: |
   Most websites begin with a feature list. Still began with a question: what if a website simply stepped aside and let the writing breathe? This essay introduces the ideas behind the theme.
